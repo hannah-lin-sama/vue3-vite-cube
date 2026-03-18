@@ -1,0 +1,97 @@
+Arguments: 
+  /Users/haiyan/.nvm/versions/node/v24.14.0/bin/node /Users/haiyan/.nvm/versions/node/v14.17.0/bin/yarn
+
+PATH: 
+  /Users/haiyan/.nvm/versions/node/v24.14.0/bin:/Users/haiyan/.cargo/bin:/opt/homebrew/opt/node@18/bin:/Users/haiyan/.nvm/versions/node/v14.17.0/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/Users/haiyan/.cargo/bin:/opt/homebrew/opt/node@18/bin:/Users/haiyan/.nvm/versions/node/v14.17.0/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  24.14.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Invariant Violation: could not find a copy of vite to link in /Users/haiyan/Documents/code/cloudcode/vue3-vite-cube/node_modules/vitest/node_modules
+      at invariant (/Users/haiyan/.nvm/versions/node/v14.17.0/lib/node_modules/yarn/lib/cli.js:2318:15)
+      at PackageLinker.<anonymous> (/Users/haiyan/.nvm/versions/node/v14.17.0/lib/node_modules/yarn/lib/cli.js:48522:7)
+      at Generator.next (<anonymous>)
+      at step (/Users/haiyan/.nvm/versions/node/v14.17.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/haiyan/.nvm/versions/node/v14.17.0/lib/node_modules/yarn/lib/cli.js:321:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+npm manifest: 
+  {
+    "name": "vue3-vite-cube",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+      "start": "vite",
+      "build": "run-p type-check \"build-only {@}\" --",
+      "preview": "vite preview",
+      "test:unit": "vitest",
+      "build-only": "vite build",
+      "type-check": "vue-tsc --build",
+      "lint": "run-s lint:*",
+      "lint:oxlint": "oxlint . --fix",
+      "lint:eslint": "eslint . --fix --cache",
+      "format": "oxfmt src/"
+    },
+    "dependencies": {
+      "pinia": "^3.0.4",
+      "vue": "^3.5.29",
+      "vue-router": "^5.0.3"
+    },
+    "devDependencies": {
+      "@tsconfig/node24": "^24.0.4",
+      "@types/jsdom": "^28.0.0",
+      "@types/node": "^24.11.0",
+      "@vitejs/plugin-vue": "^6.0.4",
+      "@vitejs/plugin-vue-jsx": "^5.1.4",
+      "@vitest/eslint-plugin": "^1.6.9",
+      "@vue/eslint-config-typescript": "^14.7.0",
+      "@vue/test-utils": "^2.4.6",
+      "@vue/tsconfig": "^0.8.1",
+      "eslint": "^10.0.2",
+      "eslint-config-prettier": "^10.1.8",
+      "eslint-plugin-oxlint": "~1.50.0",
+      "eslint-plugin-vue": "~10.8.0",
+      "jiti": "^2.6.1",
+      "jsdom": "^28.1.0",
+      "npm-run-all2": "^8.0.4",
+      "oxfmt": "^0.35.0",
+      "oxlint": "~1.50.0",
+      "typescript": "~5.9.3",
+      "vite": "beta",
+      "vite-plugin-vue-devtools": "^8.0.6",
+      "vitest": "^4.0.18",
+      "vue-tsc": "^3.2.5"
+    },
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    },
+    "resolutions": {
+      "vue": "beta",
+      "@vue/compiler-core": "beta",
+      "@vue/compiler-dom": "beta",
+      "@vue/compiler-sfc": "beta",
+      "@vue/compiler-ssr": "beta",
+      "@vue/compiler-vapor": "beta",
+      "@vue/reactivity": "beta",
+      "@vue/runtime-core": "beta",
+      "@vue/runtime-dom": "beta",
+      "@vue/runtime-vapor": "beta",
+      "@vue/server-renderer": "beta",
+      "@vue/shared": "beta",
+      "@vue/compat": "beta"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
