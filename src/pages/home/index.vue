@@ -8,6 +8,6 @@
 //   path: "home",
 // });
 defineOptions({
-  name: "HomeIndexView",
-});
+  name: 'HomeIndexView',
+})
 </script>

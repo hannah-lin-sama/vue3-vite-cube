@@ -6,12 +6,12 @@
 </template>
 <script lang="ts" setup>
 definePage({
-  redirect: "/home",
+  redirect: '/home',
   meta: {
-    title: "Home",
+    title: 'Home',
   },
-});
+})
 defineOptions({
-  name: "IndexView",
-});
+  name: 'IndexView',
+})
 </script>

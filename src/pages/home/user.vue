@@ -5,8 +5,8 @@
 </template>
 <script lang="ts" setup>
 defineOptions({
-  name: "UserView",
-});
+  name: 'UserView',
+})
 </script>
 
 <route lang="json">

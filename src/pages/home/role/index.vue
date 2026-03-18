@@ -3,6 +3,6 @@
 </template>
 <script lang="ts" setup>
 defineOptions({
-  name: "RoleIndexView",
-});
+  name: 'RoleIndexView',
+})
 </script>

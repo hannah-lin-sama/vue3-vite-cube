@@ -24,13 +24,13 @@
 <script setup lang="ts">
 definePage({
   meta: {
-    title: "Home",
+    title: 'Home',
   },
-});
+})
 // 定义组件名称
 defineOptions({
-  name: "HomeView",
-});
+  name: 'HomeView',
+})
 </script>
 
 <style scoped>

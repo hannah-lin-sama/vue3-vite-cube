@@ -6,10 +6,10 @@
 <script lang="ts" setup>
 definePage({
   meta: {
-    title: "角色管理",
+    title: '角色管理',
   },
-});
+})
 defineOptions({
-  name: "RoleView",
-});
+  name: 'RoleView',
+})
 </script>
