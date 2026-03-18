@@ -4,9 +4,11 @@
   </div>
 </template>
 <script lang="ts" setup>
-// definePage({
-//   path: "role",
-// });
+definePage({
+  meta: {
+    title: "角色管理",
+  },
+});
 defineOptions({
   name: "RoleView",
 });

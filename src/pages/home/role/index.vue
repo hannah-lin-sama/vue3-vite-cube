@@ -1,12 +1,7 @@
 <template>
-  <div>
-    <RouterView></RouterView>
-  </div>
+  <RouterView></RouterView>
 </template>
 <script lang="ts" setup>
-// definePage({
-//   path: "role",
-// });
 defineOptions({
   name: "RoleIndexView",
 });

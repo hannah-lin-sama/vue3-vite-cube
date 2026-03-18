@@ -22,6 +22,11 @@
   </div>
 </template>
 <script setup lang="ts">
+definePage({
+  meta: {
+    title: "Home",
+  },
+});
 // 定义组件名称
 defineOptions({
   name: "HomeView",
