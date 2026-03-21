@@ -48,6 +48,8 @@ declare module 'vue-router/auto-routes' {
       | '/home/'
       | '/home/role'
       | '/home/role/'
+      | '/home/task'
+      | '/home/task/'
       | '/home/user'
       | '/home/user/'
     >,
@@ -68,6 +70,20 @@ declare module 'vue-router/auto-routes' {
     '/home/role/': RouteRecordInfo<
       '/home/role/',
       '/home/role',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/home/task': RouteRecordInfo<
+      '/home/task',
+      '/home/task',
+      Record<never, never>,
+      Record<never, never>,
+      | '/home/task/'
+    >,
+    '/home/task/': RouteRecordInfo<
+      '/home/task/',
+      '/home/task',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -124,6 +140,8 @@ declare module 'vue-router/auto-routes' {
         | '/home/'
         | '/home/role'
         | '/home/role/'
+        | '/home/task'
+        | '/home/task/'
         | '/home/user'
         | '/home/user/'
       views:
@@ -145,6 +163,19 @@ declare module 'vue-router/auto-routes' {
     'src/pages/home/role/index.vue': {
       routes:
         | '/home/role/'
+      views:
+        | never
+    }
+    'src/pages/home/task.vue': {
+      routes:
+        | '/home/task'
+        | '/home/task/'
+      views:
+        | 'default'
+    }
+    'src/pages/home/task/index.vue': {
+      routes:
+        | '/home/task/'
       views:
         | never
     }

@@ -27,6 +27,12 @@
               <span class="nav-text">角色管理</span>
             </router-link>
           </li>
+          <li>
+            <router-link to="/home/task" class="nav-link">
+              <span class="nav-icon">📋</span>
+              <span class="nav-text">日志信息</span>
+            </router-link>
+          </li>
         </ul>
       </nav>
     </div>
