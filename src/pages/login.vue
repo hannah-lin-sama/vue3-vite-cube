@@ -177,35 +177,13 @@ const handleLogin = async () => {
     isLoading.value = false;
   }
 };
+
+defineOptions({
+  name: "LoginView",
+});
 </script>
 
 <style scoped lang="less">
-// 变量定义
-@primary-color: #667eea;
-@primary-light: #e6e9ff;
-@bg-color: #f5f7fa;
-@text-primary: #333;
-@text-secondary: #666;
-@border-color: #e0e0e0;
-@error-color: #ff4d4f;
-@white: #fff;
-@shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
-// 混合定义
-.transition(@property: all, @duration: 0.3s, @timing: ease) {
-  transition: @property @duration @timing;
-}
-
-.border-radius(@radius: 8px) {
-  border-radius: @radius;
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 // 主容器
 .login-container {
   display: flex;

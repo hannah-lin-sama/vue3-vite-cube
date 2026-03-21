@@ -81,37 +81,6 @@ const currentLanguage = ref("zh");
 </script>
 
 <style lang="less" scoped>
-@primary-color: #667eea;
-@primary-light: #e6e9ff;
-@bg-color: #f5f7fa;
-@text-primary: #333;
-@text-secondary: #666;
-@border-color: #f0f0f0;
-@white: #fff;
-@shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-@shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
-
-// 混合定义
-.transition(@property: all, @duration: 0.3s, @timing: ease) {
-  transition: @property @duration @timing;
-}
-
-.border-radius(@radius: 8px) {
-  border-radius: @radius;
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 // 动画定义
 @keyframes fadeIn {
   from {

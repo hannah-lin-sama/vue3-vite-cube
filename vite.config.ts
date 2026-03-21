@@ -12,11 +12,26 @@ export default defineConfig({
   plugins: [
     // 必须要在 vue 插件之前
     VueRouter({
-      routesFolder: 'src/pages', // 默认 pages，可改
+      routesFolder: 'src/pages', // 默认 pages
       extensions: ['.vue'], // 匹配文件后缀
       dts: 'src/typed-router.d.ts', // 生成类型文件
+
        // 添加调试选项
-      logs: true
+      logs: true,
+
+      routeBlockLang: 'json5', // 路由块语言，默认 json
+      importMode: 'async',
+      root: process.cwd(),
+
+      // 在配置文件写入前，手动修改路由配置（如添加全局路由守卫、调整路由元信息、过滤路由等）
+      // beforeWriteFiles: (editedRoutes) => {
+      //   console.log('beforeWriteFiles', editedRoutes)
+      // },
+      watch: true, // 开启路由块文件监听
+      // 开启实验性功能
+      experimental: {
+        
+      }
     }),
     vue(),
     vueJsx(),
@@ -27,4 +42,12 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  css: {
+    preprocessorOptions: {
+      less: {
+        additionalData: `@import "@/styles/variables.less";`,
+        javascriptEnabled: true
+      }
+    }
+  }
 })
