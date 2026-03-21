@@ -88,19 +88,17 @@
         </tbody>
       </table>
 
-      <!-- 加载更多 -->
-      <div class="load-more" v-if="hasMoreTasks">
-        <button class="load-more-button" @click="loadMore" :disabled="isLoading">
-          <span v-if="!isLoading">加载更多</span>
-          <span v-else class="loading-spinner">⟳</span>
-        </button>
+      <!-- 加载中提示 -->
+      <div class="loading-indicator" v-if="isLoading">
+        <span class="loading-spinner">⟳</span>
+        <span>加载中...</span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, onUnmounted, nextTick } from "vue";
 
 // 搜索和筛选
 const searchKeyword = ref("");
@@ -111,6 +109,9 @@ const browserFilter = ref("");
 const currentPage = ref(1);
 const pageSize = ref(20);
 const isLoading = ref(false);
+
+// 内容容器引用
+const contentContainer = ref<HTMLElement | null>(null);
 
 // 模拟操作记录数据
 const tasks = ref<any[]>([]);
@@ -183,7 +184,44 @@ const generateMockData = () => {
 // 初始化数据
 onMounted(() => {
   tasks.value = generateMockData();
+  // 等待DOM更新后添加滚动事件监听器
+  nextTick(() => {
+    // 查找content容器（home.vue中的.main .content）
+    contentContainer.value = document.querySelector(".main .content");
+    if (contentContainer.value) {
+      contentContainer.value.addEventListener("scroll", handleScroll);
+      console.log("已添加content容器滚动事件监听器");
+    } else {
+      console.log("未找到content容器");
+    }
+  });
 });
+
+// 组件卸载时移除事件监听器
+onUnmounted(() => {
+  if (contentContainer.value) {
+    contentContainer.value.removeEventListener("scroll", handleScroll);
+  }
+});
+
+// 滚动事件处理
+const handleScroll = () => {
+  if (!contentContainer.value) return;
+
+  console.log("滚动事件触发");
+
+  // 检查是否滚动到底部
+  const { scrollTop, scrollHeight, clientHeight } = contentContainer.value;
+
+  // 当滚动到距离底部100px时加载更多
+  if (
+    scrollTop + clientHeight >= scrollHeight - 100 &&
+    !isLoading.value &&
+    hasMoreTasks.value
+  ) {
+    loadMore();
+  }
+};
 
 // 过滤后的任务数据
 const filteredTasks = computed(() => {
@@ -472,36 +510,21 @@ const getStatusText = (status: string) => {
   }
 }
 
-// 加载更多
-.load-more {
+// 加载中提示
+.loading-indicator {
   text-align: center;
   padding: 20px;
   border-top: 1px solid @border-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: @font-size-sm;
+  color: @text-secondary;
 
-  .load-more-button {
-    padding: 10px 20px;
-    background-color: @bg-light;
-    color: @text-primary;
-    border: 1px solid @border-color;
-    .border-radius();
-    font-size: @font-size-sm;
-    cursor: pointer;
-    .transition();
-
-    &:hover:not(:disabled) {
-      border-color: @primary-color;
-      color: @primary-color;
-    }
-
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    .loading-spinner {
-      display: inline-block;
-      animation: spin 1s linear infinite;
-    }
+  .loading-spinner {
+    display: inline-block;
+    animation: spin 1s linear infinite;
   }
 }
 
