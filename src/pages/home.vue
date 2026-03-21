@@ -198,6 +198,8 @@ li {
     background-color: @white;
     box-shadow: @shadow-sm;
     z-index: 50;
+    position: sticky;
+    top: 0;
 
     .top-nav-left {
       h1 {
@@ -284,6 +286,8 @@ li {
     overflow-y: auto;
     background-color: @bg-color;
     animation: fadeIn 0.3s ease-out;
+    /* 确保内容区域高度计算正确 */
+    max-height: calc(100vh - 60px);
   }
 }
 
