@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <RouterView></RouterView>
-  </div>
+  <RouterView></RouterView>
 </template>
 <script lang="ts" setup>
 // definePage({
 //   path: "home",
 // });
 defineOptions({
-  name: 'HomeIndexView',
-})
+  name: "HomeIndexView",
+});
 </script>

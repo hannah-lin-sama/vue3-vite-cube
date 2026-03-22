@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -19,7 +18,7 @@ export default defineConfig({
        // 添加调试选项
       logs: true,
 
-      routeBlockLang: 'json5', // 路由块语言，默认 json
+      // routeBlockLang: 'json5', // 路由块语言，默认 json
       importMode: 'async',
       root: process.cwd(),
 

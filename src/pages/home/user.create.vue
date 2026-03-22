@@ -2,8 +2,8 @@
   <div class="user-form-container">
     <!-- 页面标题 -->
     <div class="page-header">
-      <h2>{{ user.id ? '编辑用户' : '新增用户' }}</h2>
-      <p>{{ user.id ? '修改用户信息' : '添加新用户' }}</p>
+      <h2>{{ user?.id ? "编辑用户" : "新增用户" }}</h2>
+      <p>{{ user?.id ? "修改用户信息" : "添加新用户" }}</p>
     </div>
 
     <!-- 表单区域 -->
@@ -54,7 +54,7 @@
         <div class="form-actions">
           <button type="button" class="cancel-button" @click="handleCancel">取消</button>
           <button type="submit" class="submit-button">
-            {{ isEditMode ? '保存' : '新增' }}
+            {{ isEditMode ? "保存" : "新增" }}
           </button>
         </div>
       </form>
@@ -63,11 +63,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, onMounted } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { ref, reactive, computed, onMounted } from "vue";
+import { useRouter, useRoute } from "vue-router";
 
-const router = useRouter()
-const route = useRoute()
+const router = useRouter();
+const route = useRoute();
 
 // 接收用户数据作为props
 const props = defineProps({
@@ -75,43 +75,43 @@ const props = defineProps({
     type: Object,
     default: null,
   },
-})
+});
 
 // 判断是否为编辑模式
-const isEditMode = computed(() => !!props.user)
+const isEditMode = computed(() => !!props.user);
 
 // 表单数据
 const formData = reactive({
-  id: '',
-  name: '',
-  address: '',
-  email: '',
-  phone: '',
-  avatar: '',
-})
+  id: "",
+  name: "",
+  address: "",
+  email: "",
+  phone: "",
+  avatar: "",
+});
 
 // 初始化表单数据
 onMounted(() => {
   if (isEditMode.value && props.user) {
     // 编辑模式，填充表单数据
-    Object.assign(formData, props.user)
+    Object.assign(formData, props.user);
   } else {
     // 新增模式，重置表单
-    resetForm()
+    resetForm();
   }
-})
+});
 
 // 重置表单
 const resetForm = () => {
   Object.assign(formData, {
-    id: '',
-    name: '',
-    address: '',
-    email: '',
-    phone: '',
-    avatar: '',
-  })
-}
+    id: "",
+    name: "",
+    address: "",
+    email: "",
+    phone: "",
+    avatar: "",
+  });
+};
 
 // 提交表单
 const handleSubmit = () => {
@@ -121,35 +121,35 @@ const handleSubmit = () => {
   setTimeout(() => {
     if (isEditMode.value) {
       // 编辑用户
-      console.log('编辑用户:', formData)
-      alert('用户信息已更新')
+      console.log("编辑用户:", formData);
+      alert("用户信息已更新");
     } else {
       // 新增用户
       const newUser = {
         ...formData,
         id: Date.now(), // 模拟生成ID
         avatar: `https://picsum.photos/seed/user${Date.now()}/100/100`,
-      }
-      console.log('新增用户:', newUser)
-      alert('用户已新增')
+      };
+      console.log("新增用户:", newUser);
+      alert("用户已新增");
     }
     // 跳转回用户列表页面
-    router.push('/home/user')
-  }, 500)
-}
+    router.push("/home/user");
+  }, 500);
+};
 
 // 取消操作
 const handleCancel = () => {
-  router.push('/home/user')
-}
+  router.push("/home/user");
+};
 
 defineOptions({
-  name: 'UserCreateView',
-})
+  name: "UserCreateView",
+});
 </script>
 
 <route lang="yaml">
-name: 'user_create'
+name: "user_create"
 </route>
 
 <style lang="less" scoped>
