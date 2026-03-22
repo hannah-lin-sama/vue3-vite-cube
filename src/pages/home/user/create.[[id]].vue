@@ -2,8 +2,8 @@
   <div class="user-form-container">
     <!-- 页面标题 -->
     <div class="page-header">
-      <h2>{{ user?.id ? "编辑用户" : "新增用户" }}</h2>
-      <p>{{ user?.id ? "修改用户信息" : "添加新用户" }}</p>
+      <h2>{{ $route.params?.id ? "编辑用户" : "新增用户" }}</h2>
+      <p>{{ $route.params?.id ? "修改用户信息" : "添加新用户" }}</p>
     </div>
 
     <!-- 表单区域 -->
@@ -54,7 +54,7 @@
         <div class="form-actions">
           <button type="button" class="cancel-button" @click="handleCancel">取消</button>
           <button type="submit" class="submit-button">
-            {{ isEditMode ? "保存" : "新增" }}
+            {{ $route.params?.id ? "保存" : "新增" }}
           </button>
         </div>
       </form>
@@ -63,7 +63,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, onMounted } from "vue";
+import { reactive, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 
 const router = useRouter();
@@ -78,7 +78,7 @@ const props = defineProps({
 });
 
 // 判断是否为编辑模式
-const isEditMode = computed(() => !!props.user);
+// const isEditMode = computed(() => !!props.user);
 
 // 表单数据
 const formData = reactive({
@@ -92,7 +92,7 @@ const formData = reactive({
 
 // 初始化表单数据
 onMounted(() => {
-  if (isEditMode.value && props.user) {
+  if (route.params?.id) {
     // 编辑模式，填充表单数据
     Object.assign(formData, props.user);
   } else {
@@ -119,7 +119,7 @@ const handleSubmit = () => {
 
   // 模拟API调用
   setTimeout(() => {
-    if (isEditMode.value) {
+    if (route.params?.id) {
       // 编辑用户
       console.log("编辑用户:", formData);
       alert("用户信息已更新");

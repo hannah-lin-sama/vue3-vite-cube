@@ -1,16 +1,11 @@
 <template>
-  <div>
-    <p>角色管理</p>
-  </div>
+  <RouterView></RouterView>
 </template>
 <script lang="ts" setup>
-definePage({
-  name: 'role',
-  meta: {
-    title: '角色管理',
-  },
-})
 defineOptions({
-  name: 'RoleView',
-})
+  name: "RoleView",
+});
 </script>
+<route lang="yaml">
+name: "role_index"
+</route>

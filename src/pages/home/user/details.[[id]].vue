@@ -161,7 +161,7 @@ const lastLoginDate = computed(() => {
 // 编辑用户
 const handleEdit = () => {
   // 这里可以跳转到编辑页面
-  router.push({ path: "/home/user/create", query: { id: user.value.id } });
+  router.push({ path: `/home/user/create/${user.value.id}` });
 };
 
 // 页面加载时获取用户数据
@@ -504,6 +504,6 @@ defineOptions({
 
 <route lang="json">
 {
-  "name": "user-details"
+  "name": "user_details"
 }
 </route>

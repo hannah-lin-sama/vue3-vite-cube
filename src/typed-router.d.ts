@@ -51,8 +51,8 @@ declare module 'vue-router/auto-routes' {
       | 'task'
       | 'task_index'
       | 'user'
-      | 'user-details'
       | 'user_create'
+      | 'user_details'
       | 'user_index'
     >,
     '/home/': RouteRecordInfo<
@@ -62,15 +62,15 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    'role': RouteRecordInfo<
-      'role',
+    'role_index': RouteRecordInfo<
+      'role_index',
       '/home/role',
       Record<never, never>,
       Record<never, never>,
-      | 'role_index'
+      | 'role'
     >,
-    'role_index': RouteRecordInfo<
-      'role_index',
+    'role': RouteRecordInfo<
+      'role',
       '/home/role',
       Record<never, never>,
       Record<never, never>,
@@ -90,15 +90,17 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    'user': RouteRecordInfo<
-      'user',
+    'user_index': RouteRecordInfo<
+      'user_index',
       '/home/user',
       Record<never, never>,
       Record<never, never>,
-      | 'user_index'
+      | 'user'
+      | 'user_create'
+      | 'user_details'
     >,
-    'user_index': RouteRecordInfo<
-      'user_index',
+    'user': RouteRecordInfo<
+      'user',
       '/home/user',
       Record<never, never>,
       Record<never, never>,
@@ -106,16 +108,16 @@ declare module 'vue-router/auto-routes' {
     >,
     'user_create': RouteRecordInfo<
       'user_create',
-      '/home/user/create',
-      Record<never, never>,
-      Record<never, never>,
+      '/home/user/create/:id?',
+      { id?: ParamValueZeroOrOne<true> },
+      { id?: ParamValueZeroOrOne<false> },
       | never
     >,
-    'user-details': RouteRecordInfo<
-      'user-details',
-      '/home/user/details',
-      Record<never, never>,
-      Record<never, never>,
+    'user_details': RouteRecordInfo<
+      'user_details',
+      '/home/user/details/:id?',
+      { id?: ParamValueZeroOrOne<true> },
+      { id?: ParamValueZeroOrOne<false> },
       | never
     >,
     'login': RouteRecordInfo<
@@ -159,8 +161,8 @@ declare module 'vue-router/auto-routes' {
         | 'task'
         | 'task_index'
         | 'user'
-        | 'user-details'
         | 'user_create'
+        | 'user_details'
         | 'user_index'
       views:
         | 'default'
@@ -180,7 +182,7 @@ declare module 'vue-router/auto-routes' {
     }
     'src/pages/home/role/index.vue': {
       routes:
-        | 'role_index'
+        | 'role'
       views:
         | never
     }
@@ -200,25 +202,27 @@ declare module 'vue-router/auto-routes' {
     'src/pages/home/user.vue': {
       routes:
         | 'user'
+        | 'user_create'
+        | 'user_details'
         | 'user_index'
       views:
         | 'default'
     }
     'src/pages/home/user/index.vue': {
       routes:
-        | 'user_index'
+        | 'user'
       views:
         | never
     }
-    'src/pages/home/user.create.vue': {
+    'src/pages/home/user/create.[[id]].vue': {
       routes:
         | 'user_create'
       views:
         | never
     }
-    'src/pages/home/user.details.vue': {
+    'src/pages/home/user/details.[[id]].vue': {
       routes:
-        | 'user-details'
+        | 'user_details'
       views:
         | never
     }
