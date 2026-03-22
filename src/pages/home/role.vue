@@ -5,6 +5,7 @@
 </template>
 <script lang="ts" setup>
 definePage({
+  name: 'role',
   meta: {
     title: '角色管理',
   },

@@ -7,6 +7,7 @@
 <script lang="ts" setup>
 definePage({
   redirect: '/home',
+  name: 'home_index',
   meta: {
     title: 'Home',
   },

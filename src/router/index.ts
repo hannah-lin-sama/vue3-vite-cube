@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory,parseQuery } from 'vue-router'
+import { createRouter, createWebHistory, parseQuery } from 'vue-router'
 // 自动生成的路由（vite 插件注入）
 import { routes } from 'vue-router/auto-routes'
 

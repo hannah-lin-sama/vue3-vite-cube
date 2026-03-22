@@ -6,3 +6,6 @@ defineOptions({
   name: 'UserIndexView',
 })
 </script>
+<route lang="yaml">
+name: 'user_index'
+</route>

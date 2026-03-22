@@ -7,9 +7,7 @@
         <span class="digit">4</span>
       </div>
       <h1 class="error-title">页面不存在</h1>
-      <p class="error-description">
-        抱歉，您访问的页面可能已被删除、移动或输入了错误的地址。
-      </p>
+      <p class="error-description">抱歉，您访问的页面可能已被删除、移动或输入了错误的地址。</p>
       <router-link to="/home" class="back-home-btn"> 返回首页 </router-link>
     </div>
   </div>
@@ -17,8 +15,8 @@
 
 <script lang="ts" setup>
 defineOptions({
-  name: "NotFoundView",
-});
+  name: 'NotFoundView',
+})
 </script>
 
 <style scoped>

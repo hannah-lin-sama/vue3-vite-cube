@@ -6,3 +6,6 @@ defineOptions({
   name: 'RoleIndexView',
 })
 </script>
+<route lang="yaml">
+name: 'role_index'
+</route>

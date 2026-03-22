@@ -22,7 +22,9 @@
 
       <!-- 操作按钮组 -->
       <div class="action-buttons">
-        <button class="primary-button" @click="showAddDialog = true">➕ 新增用户</button>
+        <button class="primary-button" @click="$router.push('/home/user/create')">
+          ➕ 新增用户
+        </button>
         <button class="secondary-button" @click="handleDownload">📥 下载列表</button>
       </div>
     </div>
@@ -55,9 +57,7 @@
             <td>{{ user.phone }}</td>
             <td class="action-column">
               <button class="edit-button" @click="handleEdit(user)">✏️ 编辑</button>
-              <button class="delete-button" @click="handleDelete(user.id)">
-                🗑️ 删除
-              </button>
+              <button class="delete-button" @click="handleDelete(user.id)">🗑️ 删除</button>
             </td>
           </tr>
           <tr v-if="paginatedUsers.length === 0">
@@ -69,23 +69,13 @@
 
     <!-- 分页 -->
     <div class="pagination" v-if="totalUsers > 0">
-      <button
-        class="pagination-button"
-        :disabled="currentPage === 1"
-        @click="currentPage = 1"
-      >
+      <button class="pagination-button" :disabled="currentPage === 1" @click="currentPage = 1">
         首页
       </button>
-      <button
-        class="pagination-button"
-        :disabled="currentPage === 1"
-        @click="currentPage--"
-      >
+      <button class="pagination-button" :disabled="currentPage === 1" @click="currentPage--">
         上一页
       </button>
-      <span class="pagination-info">
-        第 {{ currentPage }} 页，共 {{ totalPages }} 页
-      </span>
+      <span class="pagination-info"> 第 {{ currentPage }} 页，共 {{ totalPages }} 页 </span>
       <button
         class="pagination-button"
         :disabled="currentPage === totalPages"
@@ -100,54 +90,6 @@
       >
         末页
       </button>
-    </div>
-
-    <!-- 新增/编辑用户对话框 -->
-    <div class="dialog-overlay" v-if="showAddDialog || showEditDialog">
-      <div class="dialog">
-        <div class="dialog-header">
-          <h3>{{ showEditDialog ? "编辑用户" : "新增用户" }}</h3>
-          <button class="close-button" @click="closeDialog">&times;</button>
-        </div>
-        <div class="dialog-body">
-          <form @submit.prevent="handleSubmit">
-            <div class="form-group">
-              <label>用户名称</label>
-              <input
-                type="text"
-                v-model="formData.name"
-                placeholder="请输入用户名称"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label>地址</label>
-              <input type="text" v-model="formData.address" placeholder="请输入地址" />
-            </div>
-            <div class="form-group">
-              <label>邮箱</label>
-              <input
-                type="email"
-                v-model="formData.email"
-                placeholder="请输入邮箱"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label>联系方式</label>
-              <input type="tel" v-model="formData.phone" placeholder="请输入联系方式" />
-            </div>
-            <div class="form-actions">
-              <button type="button" class="cancel-button" @click="closeDialog">
-                取消
-              </button>
-              <button type="submit" class="submit-button">
-                {{ showEditDialog ? "保存" : "新增" }}
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
     </div>
 
     <!-- 删除确认对话框 -->
@@ -170,217 +112,197 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, reactive } from "vue";
+import { ref, computed, reactive } from 'vue'
 
 // 搜索关键词
-const searchKeyword = ref("");
+const searchKeyword = ref('')
 
 // 分页相关
-const currentPage = ref(1);
-const pageSize = ref(10);
+const currentPage = ref(1)
+const pageSize = ref(10)
 
 // 对话框状态
-const showAddDialog = ref(false);
-const showEditDialog = ref(false);
-const showDeleteDialog = ref(false);
+const showAddDialog = ref(false)
+const showEditDialog = ref(false)
+const showDeleteDialog = ref(false)
 
 // 表单数据
 const formData = reactive({
-  id: "",
-  name: "",
-  address: "",
-  email: "",
-  phone: "",
-  avatar: "",
-});
+  id: '',
+  name: '',
+  address: '',
+  email: '',
+  phone: '',
+  avatar: '',
+})
 
 // 待删除的用户ID
-const deleteUserId = ref("");
+const deleteUserId = ref('')
 
 // 模拟用户数据
 const users = ref([
   {
     id: 1,
-    name: "张三",
-    avatar: "https://picsum.photos/seed/user1/100/100",
-    address: "北京市朝阳区",
-    email: "zhangsan@example.com",
-    phone: "13800138001",
+    name: '张三',
+    avatar: 'https://picsum.photos/seed/user1/100/100',
+    address: '北京市朝阳区',
+    email: 'zhangsan@example.com',
+    phone: '13800138001',
   },
   {
     id: 2,
-    name: "李四",
-    avatar: "https://picsum.photos/seed/user2/100/100",
-    address: "上海市浦东新区",
-    email: "lisi@example.com",
-    phone: "13900139001",
+    name: '李四',
+    avatar: 'https://picsum.photos/seed/user2/100/100',
+    address: '上海市浦东新区',
+    email: 'lisi@example.com',
+    phone: '13900139001',
   },
   {
     id: 3,
-    name: "王五",
-    avatar: "https://picsum.photos/seed/user3/100/100",
-    address: "广州市天河区",
-    email: "wangwu@example.com",
-    phone: "13700137001",
+    name: '王五',
+    avatar: 'https://picsum.photos/seed/user3/100/100',
+    address: '广州市天河区',
+    email: 'wangwu@example.com',
+    phone: '13700137001',
   },
   {
     id: 4,
-    name: "赵六",
-    avatar: "https://picsum.photos/seed/user4/100/100",
-    address: "深圳市南山区",
-    email: "zhaoliu@example.com",
-    phone: "13600136001",
+    name: '赵六',
+    avatar: 'https://picsum.photos/seed/user4/100/100',
+    address: '深圳市南山区',
+    email: 'zhaoliu@example.com',
+    phone: '13600136001',
   },
   {
     id: 5,
-    name: "钱七",
-    avatar: "https://picsum.photos/seed/user5/100/100",
-    address: "杭州市西湖区",
-    email: "qianqi@example.com",
-    phone: "13500135001",
+    name: '钱七',
+    avatar: 'https://picsum.photos/seed/user5/100/100',
+    address: '杭州市西湖区',
+    email: 'qianqi@example.com',
+    phone: '13500135001',
   },
   {
     id: 6,
-    name: "孙八",
-    avatar: "https://picsum.photos/seed/user6/100/100",
-    address: "成都市锦江区",
-    email: "sunba@example.com",
-    phone: "13400134001",
+    name: '孙八',
+    avatar: 'https://picsum.photos/seed/user6/100/100',
+    address: '成都市锦江区',
+    email: 'sunba@example.com',
+    phone: '13400134001',
   },
   {
     id: 7,
-    name: "周九",
-    avatar: "https://picsum.photos/seed/user7/100/100",
-    address: "武汉市武昌区",
-    email: "zhoujiu@example.com",
-    phone: "13300133001",
+    name: '周九',
+    avatar: 'https://picsum.photos/seed/user7/100/100',
+    address: '武汉市武昌区',
+    email: 'zhoujiu@example.com',
+    phone: '13300133001',
   },
   {
     id: 8,
-    name: "吴十",
-    avatar: "https://picsum.photos/seed/user8/100/100",
-    address: "西安市雁塔区",
-    email: "wushi@example.com",
-    phone: "13200132001",
+    name: '吴十',
+    avatar: 'https://picsum.photos/seed/user8/100/100',
+    address: '西安市雁塔区',
+    email: 'wushi@example.com',
+    phone: '13200132001',
   },
   {
     id: 9,
-    name: "郑十一",
-    avatar: "https://picsum.photos/seed/user9/100/100",
-    address: "南京市玄武区",
-    email: "zhengshiyi@example.com",
-    phone: "13100131001",
+    name: '郑十一',
+    avatar: 'https://picsum.photos/seed/user9/100/100',
+    address: '南京市玄武区',
+    email: 'zhengshiyi@example.com',
+    phone: '13100131001',
   },
   {
     id: 10,
-    name: "王十二",
-    avatar: "https://picsum.photos/seed/user10/100/100",
-    address: "重庆市渝中区",
-    email: "wangshier@example.com",
-    phone: "13000130001",
+    name: '王十二',
+    avatar: 'https://picsum.photos/seed/user10/100/100',
+    address: '重庆市渝中区',
+    email: 'wangshier@example.com',
+    phone: '13000130001',
   },
   {
     id: 11,
-    name: "李十三",
-    avatar: "https://picsum.photos/seed/user11/100/100",
-    address: "天津市和平区",
-    email: "lishisan@example.com",
-    phone: "13800138002",
+    name: '李十三',
+    avatar: 'https://picsum.photos/seed/user11/100/100',
+    address: '天津市和平区',
+    email: 'lishisan@example.com',
+    phone: '13800138002',
   },
-]);
+])
 
 // 过滤后的用户数据
 const filteredUsers = computed(() => {
   if (!searchKeyword.value) {
-    return users.value;
+    return users.value
   }
   return users.value.filter((user) =>
-    user.name.toLowerCase().includes(searchKeyword.value.toLowerCase())
-  );
-});
+    user.name.toLowerCase().includes(searchKeyword.value.toLowerCase()),
+  )
+})
 
 // 分页后的用户数据
 const paginatedUsers = computed(() => {
-  const start = (currentPage.value - 1) * pageSize.value;
-  const end = start + pageSize.value;
-  return filteredUsers.value.slice(start, end);
-});
+  const start = (currentPage.value - 1) * pageSize.value
+  const end = start + pageSize.value
+  return filteredUsers.value.slice(start, end)
+})
 
 // 总用户数
-const totalUsers = computed(() => filteredUsers.value.length);
+const totalUsers = computed(() => filteredUsers.value.length)
 
 // 总页数
 const totalPages = computed(() => {
-  return Math.ceil(totalUsers.value / pageSize.value);
-});
+  return Math.ceil(totalUsers.value / pageSize.value)
+})
 
 // 搜索处理
 const handleSearch = () => {
-  currentPage.value = 1; // 搜索后重置到第一页
-};
+  currentPage.value = 1 // 搜索后重置到第一页
+}
 
 // 打开编辑对话框
 const handleEdit = (user: any) => {
-  Object.assign(formData, user);
-  showEditDialog.value = true;
-};
+  Object.assign(formData, user)
+  showEditDialog.value = true
+}
 
 // 打开删除确认对话框
 const handleDelete = (userId: number) => {
-  deleteUserId.value = userId;
-  showDeleteDialog.value = true;
-};
+  deleteUserId.value = userId
+  showDeleteDialog.value = true
+}
 
 // 确认删除
 const confirmDelete = () => {
-  users.value = users.value.filter((user) => user.id !== deleteUserId.value);
-  showDeleteDialog.value = false;
-};
+  users.value = users.value.filter((user) => user.id !== deleteUserId.value)
+  showDeleteDialog.value = false
+}
 
 // 关闭对话框
-const closeDialog = () => {
-  showAddDialog.value = false;
-  showEditDialog.value = false;
-  // 重置表单
-  Object.assign(formData, {
-    id: "",
-    name: "",
-    address: "",
-    email: "",
-    phone: "",
-    avatar: "",
-  });
-};
-
-// 提交表单
-const handleSubmit = () => {
-  if (showEditDialog.value) {
-    // 编辑用户
-    const index = users.value.findIndex((user) => user.id === formData.id);
-    if (index !== -1) {
-      users.value[index] = { ...formData };
-    }
-  } else {
-    // 新增用户
-    const newUser = {
-      ...formData,
-      id: users.value.length + 1,
-      avatar: `https://picsum.photos/seed/user${users.value.length + 1}/100/100`,
-    };
-    users.value.push(newUser);
-  }
-  closeDialog();
-};
+// const closeDialog = () => {
+//   showAddDialog.value = false;
+//   showEditDialog.value = false;
+//   // 重置表单
+//   Object.assign(formData, {
+//     id: "",
+//     name: "",
+//     address: "",
+//     email: "",
+//     phone: "",
+//     avatar: "",
+//   });
+// };
 
 // 下载列表
 const handleDownload = () => {
   // 这里可以实现导出Excel或CSV的逻辑
-  alert("下载功能开发中...");
-};
+  alert('下载功能开发中...')
+}
 
 defineOptions({
-  name: "UserView",
-});
+  name: 'UserView',
+})
 </script>
 
 <style lang="less" scoped>
@@ -813,3 +735,9 @@ defineOptions({
   }
 }
 </style>
+
+<route lang="json">
+{
+  "name": "user"
+}
+</route>

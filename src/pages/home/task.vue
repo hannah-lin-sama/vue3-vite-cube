@@ -65,9 +65,7 @@
             </td>
             <td>{{ task.page }}</td>
             <td>
-              {{ task.platform.type === "mobile" ? "手机" : "电脑" }}<br />{{
-                task.platform.model
-              }}
+              {{ task.platform.type === 'mobile' ? '手机' : '电脑' }}<br />{{ task.platform.model }}
             </td>
             <td>{{ task.browser.name }} {{ task.browser.version }}</td>
             <td>
@@ -98,72 +96,64 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, nextTick } from "vue";
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 
 // 搜索和筛选
-const searchKeyword = ref("");
-const platformFilter = ref("");
-const browserFilter = ref("");
+const searchKeyword = ref('')
+const platformFilter = ref('')
+const browserFilter = ref('')
 
 // 分页和懒加载
-const currentPage = ref(1);
-const pageSize = ref(20);
-const isLoading = ref(false);
+const currentPage = ref(1)
+const pageSize = ref(20)
+const isLoading = ref(false)
 
 // 内容容器引用
-const contentContainer = ref<HTMLElement | null>(null);
+const contentContainer = ref<HTMLElement | null>(null)
 
 // 模拟操作记录数据
-const tasks = ref<any[]>([]);
+const tasks = ref<any[]>([])
 
 // 生成模拟数据
 const generateMockData = () => {
-  const mockTasks = [];
+  const mockTasks = []
   const users = [
-    { id: 1, name: "张三", avatar: "https://picsum.photos/seed/user1/100/100" },
-    { id: 2, name: "李四", avatar: "https://picsum.photos/seed/user2/100/100" },
-    { id: 3, name: "王五", avatar: "https://picsum.photos/seed/user3/100/100" },
-    { id: 4, name: "赵六", avatar: "https://picsum.photos/seed/user4/100/100" },
-    { id: 5, name: "钱七", avatar: "https://picsum.photos/seed/user5/100/100" },
-  ];
+    { id: 1, name: '张三', avatar: 'https://picsum.photos/seed/user1/100/100' },
+    { id: 2, name: '李四', avatar: 'https://picsum.photos/seed/user2/100/100' },
+    { id: 3, name: '王五', avatar: 'https://picsum.photos/seed/user3/100/100' },
+    { id: 4, name: '赵六', avatar: 'https://picsum.photos/seed/user4/100/100' },
+    { id: 5, name: '钱七', avatar: 'https://picsum.photos/seed/user5/100/100' },
+  ]
 
-  const pages = ["首页", "用户管理", "角色管理", "任务管理", "系统设置", "数据统计"];
-  const operationTypes = ["create", "update", "delete", "view", "export"];
-  const statuses = ["success", "warning", "error"];
+  const pages = ['首页', '用户管理', '角色管理', '任务管理', '系统设置', '数据统计']
+  const operationTypes = ['create', 'update', 'delete', 'view', 'export']
+  const statuses = ['success', 'warning', 'error']
 
   const mobileModels = [
-    "iPhone 14",
-    "iPhone 15",
-    "Samsung Galaxy S23",
-    "Huawei Mate 50",
-    "Xiaomi 13",
-  ];
-  const desktopModels = [
-    "MacBook Pro",
-    "Dell XPS",
-    "HP Spectre",
-    "Lenovo ThinkPad",
-    "Asus ZenBook",
-  ];
+    'iPhone 14',
+    'iPhone 15',
+    'Samsung Galaxy S23',
+    'Huawei Mate 50',
+    'Xiaomi 13',
+  ]
+  const desktopModels = ['MacBook Pro', 'Dell XPS', 'HP Spectre', 'Lenovo ThinkPad', 'Asus ZenBook']
 
   const browsers = [
-    { name: "Chrome", version: "120.0.0.0" },
-    { name: "Firefox", version: "115.0.0" },
-    { name: "Safari", version: "16.0" },
-    { name: "Edge", version: "120.0.0.0" },
-  ];
+    { name: 'Chrome', version: '120.0.0.0' },
+    { name: 'Firefox', version: '115.0.0' },
+    { name: 'Safari', version: '16.0' },
+    { name: 'Edge', version: '120.0.0.0' },
+  ]
 
   for (let i = 1; i <= 300; i++) {
-    const isMobile = Math.random() > 0.5;
+    const isMobile = Math.random() > 0.5
     mockTasks.push({
       id: i,
-      timestamp: new Date(
-        Date.now() - Math.floor(Math.random() * 30 * 24 * 60 * 60 * 1000)
-      ), // 过去30天内的随机时间
+      timestamp: new Date(Date.now() - Math.floor(Math.random() * 30 * 24 * 60 * 60 * 1000)), // 过去30天内的随机时间
       user: users[Math.floor(Math.random() * users.length)],
       page: pages[Math.floor(Math.random() * pages.length)],
       platform: {
-        type: isMobile ? "mobile" : "desktop",
+        type: isMobile ? 'mobile' : 'desktop',
         model: isMobile
           ? mobileModels[Math.floor(Math.random() * mobileModels.length)]
           : desktopModels[Math.floor(Math.random() * desktopModels.length)],
@@ -171,57 +161,53 @@ const generateMockData = () => {
       browser: browsers[Math.floor(Math.random() * browsers.length)],
       operationType: operationTypes[Math.floor(Math.random() * operationTypes.length)],
       ip: `${Math.floor(Math.random() * 256)}.${Math.floor(
-        Math.random() * 256
+        Math.random() * 256,
       )}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}`,
       status: statuses[Math.floor(Math.random() * statuses.length)],
-    });
+    })
   }
 
   // 按时间降序排序
-  return mockTasks.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
-};
+  return mockTasks.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
+}
 
 // 初始化数据
 onMounted(() => {
-  tasks.value = generateMockData();
+  tasks.value = generateMockData()
   // 等待DOM更新后添加滚动事件监听器
   nextTick(() => {
     // 查找content容器（home.vue中的.main .content）
-    contentContainer.value = document.querySelector(".main .content");
+    contentContainer.value = document.querySelector('.main .content')
     if (contentContainer.value) {
-      contentContainer.value.addEventListener("scroll", handleScroll);
-      console.log("已添加content容器滚动事件监听器");
+      contentContainer.value.addEventListener('scroll', handleScroll)
+      console.log('已添加content容器滚动事件监听器')
     } else {
-      console.log("未找到content容器");
+      console.log('未找到content容器')
     }
-  });
-});
+  })
+})
 
 // 组件卸载时移除事件监听器
 onUnmounted(() => {
   if (contentContainer.value) {
-    contentContainer.value.removeEventListener("scroll", handleScroll);
+    contentContainer.value.removeEventListener('scroll', handleScroll)
   }
-});
+})
 
 // 滚动事件处理
 const handleScroll = () => {
-  if (!contentContainer.value) return;
+  if (!contentContainer.value) return
 
-  console.log("滚动事件触发");
+  console.log('滚动事件触发')
 
   // 检查是否滚动到底部
-  const { scrollTop, scrollHeight, clientHeight } = contentContainer.value;
+  const { scrollTop, scrollHeight, clientHeight } = contentContainer.value
 
   // 当滚动到距离底部100px时加载更多
-  if (
-    scrollTop + clientHeight >= scrollHeight - 100 &&
-    !isLoading.value &&
-    hasMoreTasks.value
-  ) {
-    loadMore();
+  if (scrollTop + clientHeight >= scrollHeight - 100 && !isLoading.value && hasMoreTasks.value) {
+    loadMore()
   }
-};
+}
 
 // 过滤后的任务数据
 const filteredTasks = computed(() => {
@@ -230,83 +216,84 @@ const filteredTasks = computed(() => {
     const matchesSearch =
       !searchKeyword.value ||
       task.user.name.toLowerCase().includes(searchKeyword.value.toLowerCase()) ||
-      task.page.toLowerCase().includes(searchKeyword.value.toLowerCase());
+      task.page.toLowerCase().includes(searchKeyword.value.toLowerCase())
 
     // 平台过滤
-    const matchesPlatform =
-      !platformFilter.value || task.platform.type === platformFilter.value;
+    const matchesPlatform = !platformFilter.value || task.platform.type === platformFilter.value
 
     // 浏览器过滤
-    const matchesBrowser =
-      !browserFilter.value || task.browser.name === browserFilter.value;
+    const matchesBrowser = !browserFilter.value || task.browser.name === browserFilter.value
 
-    return matchesSearch && matchesPlatform && matchesBrowser;
-  });
-});
+    return matchesSearch && matchesPlatform && matchesBrowser
+  })
+})
 
 // 显示的任务数据（懒加载）
 const displayedTasks = computed(() => {
-  const end = currentPage.value * pageSize.value;
-  return filteredTasks.value.slice(0, end);
-});
+  const end = currentPage.value * pageSize.value
+  return filteredTasks.value.slice(0, end)
+})
 
 // 是否有更多数据
 const hasMoreTasks = computed(() => {
-  return displayedTasks.value.length < filteredTasks.value.length;
-});
+  return displayedTasks.value.length < filteredTasks.value.length
+})
 
 // 加载更多
 const loadMore = () => {
   if (!isLoading.value && hasMoreTasks.value) {
-    isLoading.value = true;
+    isLoading.value = true
     // 模拟加载延迟
     setTimeout(() => {
-      currentPage.value++;
-      isLoading.value = false;
-    }, 500);
+      currentPage.value++
+      isLoading.value = false
+    }, 500)
   }
-};
+}
 
 // 搜索处理
 const handleSearch = () => {
-  currentPage.value = 1; // 搜索后重置到第一页
-};
+  currentPage.value = 1 // 搜索后重置到第一页
+}
 
 // 格式化日期
 const formatDate = (date: Date) => {
-  return date.toLocaleString("zh-CN", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
-};
+  return date.toLocaleString('zh-CN', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  })
+}
 
 // 获取操作类型文本
 const getOperationTypeText = (type: string) => {
   const typeMap: Record<string, string> = {
-    create: "创建",
-    update: "更新",
-    delete: "删除",
-    view: "查看",
-    export: "导出",
-  };
-  return typeMap[type] || type;
-};
+    create: '创建',
+    update: '更新',
+    delete: '删除',
+    view: '查看',
+    export: '导出',
+  }
+  return typeMap[type] || type
+}
 
 // 获取状态文本
 const getStatusText = (status: string) => {
   const statusMap: Record<string, string> = {
-    success: "成功",
-    warning: "警告",
-    error: "错误",
-  };
-  return statusMap[status] || status;
-};
+    success: '成功',
+    warning: '警告',
+    error: '错误',
+  }
+  return statusMap[status] || status
+}
 </script>
 
+<route lang="yaml">
+name: 'task'
+</route>
 <style lang="less" scoped>
 // 主容器
 .task-management {

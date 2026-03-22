@@ -31,7 +31,7 @@ export default defineConfig({
       // 开启实验性功能
       experimental: {
         
-      }
+      },
     }),
     vue(),
     vueJsx(),
