@@ -115,9 +115,9 @@ declare module 'vue-router/auto-routes' {
     >,
     'user_details': RouteRecordInfo<
       'user_details',
-      '/home/user/details/:id?',
-      { id?: ParamValueZeroOrOne<true> },
-      { id?: ParamValueZeroOrOne<false> },
+      '/home/user/details/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
       | never
     >,
     'login': RouteRecordInfo<
@@ -220,7 +220,7 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'src/pages/home/user/details.[[id]].vue': {
+    'src/pages/home/user/details.[id].vue': {
       routes:
         | 'user_details'
       views:
