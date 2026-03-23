@@ -1,4 +1,4 @@
-import { fileURLToPath, URL } from 'node:url'
+// import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -42,8 +42,12 @@ export default defineConfig({
     vueDevTools(),
   ],
   resolve: {
+    // alias: {
+    //   '@': fileURLToPath(new URL('./src', import.meta.url))
+    // },
+    tsconfigPaths: true,  // 自动读取 tsconfig paths
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': '/src',
     },
   },
   css: {
