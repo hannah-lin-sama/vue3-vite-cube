@@ -3,13 +3,13 @@
 </template>
 <script lang="ts" setup>
 definePage({
-  redirect: "/home",
-  name: "layout",
+  redirect: '/home',
+  name: 'layout',
   meta: {
-    title: "Home",
+    title: 'Home',
   },
-});
+})
 defineOptions({
-  name: "IndexView",
-});
+  name: 'IndexView',
+})
 </script>

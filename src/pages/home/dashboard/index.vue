@@ -5,6 +5,6 @@
 </template>
 <script lang="ts" setup>
 defineOptions({
-  name: "HomeDashboardIndexView",
-});
+  name: 'HomeDashboardIndexView',
+})
 </script>

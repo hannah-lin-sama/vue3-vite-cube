@@ -53,7 +53,7 @@
           <!-- 语言选择 -->
           <div class="language-selector">
             <button class="language-btn">
-              {{ currentLanguage === "zh" ? "中文" : "English" }}
+              {{ currentLanguage === 'zh' ? '中文' : 'English' }}
               <span class="dropdown-icon">▼</span>
             </button>
           </div>
@@ -76,22 +76,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
 definePage({
-  name: "home",
+  name: 'home',
   meta: {
-    title: "Home",
+    title: 'Home',
   },
-});
+})
 
 // 定义组件名称
 defineOptions({
-  name: "HomeView",
-});
+  name: 'HomeView',
+})
 
 // 语言切换
-const currentLanguage = ref("zh");
+const currentLanguage = ref('zh')
 </script>
 
 <style lang="less" scoped>

@@ -106,78 +106,78 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
-import { useRouter, useRoute } from "vue-router";
+import { ref, computed, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
-const router = useRouter();
-const route = useRoute();
+const router = useRouter()
+const route = useRoute()
 
 // 模拟用户数据
 const user = ref({
   id: 1,
-  name: "张三",
-  avatar: "https://picsum.photos/seed/user1/200/200",
-  address: "北京市朝阳区",
-  email: "zhangsan@example.com",
-  phone: "13800138001",
-});
+  name: '张三',
+  avatar: 'https://picsum.photos/seed/user1/200/200',
+  address: '北京市朝阳区',
+  email: 'zhangsan@example.com',
+  phone: '13800138001',
+})
 
 // 模拟活动记录
 const activities = ref([
   {
-    icon: "📝",
-    text: "更新了个人信息",
-    time: "2026-03-20 14:30",
+    icon: '📝',
+    text: '更新了个人信息',
+    time: '2026-03-20 14:30',
   },
   {
-    icon: "🔑",
-    text: "登录了系统",
-    time: "2026-03-19 09:15",
+    icon: '🔑',
+    text: '登录了系统',
+    time: '2026-03-19 09:15',
   },
   {
-    icon: "📤",
-    text: "导出了数据报表",
-    time: "2026-03-18 16:45",
+    icon: '📤',
+    text: '导出了数据报表',
+    time: '2026-03-18 16:45',
   },
   {
-    icon: "📥",
-    text: "上传了文件",
-    time: "2026-03-17 11:20",
+    icon: '📥',
+    text: '上传了文件',
+    time: '2026-03-17 11:20',
   },
-]);
+])
 
 // 格式化日期
 const formattedDate = computed(() => {
-  return new Date().toLocaleDateString("zh-CN");
-});
+  return new Date().toLocaleDateString('zh-CN')
+})
 
 // 最后登录日期
 const lastLoginDate = computed(() => {
-  const date = new Date();
-  date.setDate(date.getDate() - 2);
-  return date.toLocaleString("zh-CN");
-});
+  const date = new Date()
+  date.setDate(date.getDate() - 2)
+  return date.toLocaleString('zh-CN')
+})
 
 // 编辑用户
 const handleEdit = () => {
   // 这里可以跳转到编辑页面
-  router.push({ path: `/home/user/create/${user.value.id}` });
-};
+  router.push({ path: `/home/user/create/${user.value.id}` })
+}
 
 // 页面加载时获取用户数据
 onMounted(() => {
   // 这里可以通过 API 获取用户数据
   // 模拟从路由参数获取用户ID
-  const userId = route.params.id;
+  const userId = route.params.id
   if (userId) {
     // 根据ID获取用户数据
-    console.log("获取用户数据:", userId);
+    console.log('获取用户数据:', userId)
   }
-});
+})
 
 defineOptions({
-  name: "UserDetailsView",
-});
+  name: 'UserDetailsView',
+})
 </script>
 
 <style lang="less" scoped>

@@ -4,12 +4,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { onMounted } from "vue";
+import { onMounted } from 'vue'
 
 defineOptions({
-  name: "IndexLogsView",
-});
+  name: 'IndexLogsView',
+})
 onMounted(() => {
-  console.log("IndexLogsView mounted");
-});
+  console.log('IndexLogsView mounted')
+})
 </script>

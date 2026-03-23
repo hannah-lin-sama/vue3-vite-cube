@@ -514,4 +514,6 @@ defineOptions({
 
 <route lang="yaml">
 name: 'login'
+meta:
+  title: 'Login'
 </route>

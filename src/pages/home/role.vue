@@ -3,9 +3,9 @@
 </template>
 <script lang="ts" setup>
 defineOptions({
-  name: "RoleView",
-});
+  name: 'RoleView',
+})
 </script>
 <route lang="yaml">
-name: "role_index"
+name: 'role_index'
 </route>

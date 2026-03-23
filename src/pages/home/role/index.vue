@@ -5,12 +5,12 @@
 </template>
 <script lang="ts" setup>
 definePage({
-  name: "role",
+  name: 'role',
   meta: {
-    title: "角色管理",
+    title: '角色管理',
   },
-});
+})
 defineOptions({
-  name: "RoleIndexView",
-});
+  name: 'RoleIndexView',
+})
 </script>

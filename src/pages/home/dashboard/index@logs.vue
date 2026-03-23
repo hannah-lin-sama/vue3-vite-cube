@@ -109,140 +109,140 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted } from 'vue'
 
 defineOptions({
-  name: "HomeDashboardIndexLogsView",
-});
+  name: 'HomeDashboardIndexLogsView',
+})
 
 // 时间范围选项
 const timeRanges = [
-  { label: "过去24小时", value: "24h" },
-  { label: "过去7天", value: "7d" },
-  { label: "过去30天", value: "30d" },
-  { label: "过去90天", value: "90d" },
-];
+  { label: '过去24小时', value: '24h' },
+  { label: '过去7天', value: '7d' },
+  { label: '过去30天', value: '30d' },
+  { label: '过去90天', value: '90d' },
+]
 
 // 选中的时间范围
-const selectedTimeRange = ref("24h");
+const selectedTimeRange = ref('24h')
 
 // 关键指标数据
 const metrics = ref([
   {
     id: 1,
-    title: "总请求数",
-    value: "12,458",
-    change: "+12.5%",
-    changeClass: "positive",
-    icon: "📈",
-    iconClass: "primary",
+    title: '总请求数',
+    value: '12,458',
+    change: '+12.5%',
+    changeClass: 'positive',
+    icon: '📈',
+    iconClass: 'primary',
   },
   {
     id: 2,
-    title: "平均响应时间",
-    value: "123ms",
-    change: "-8.2%",
-    changeClass: "positive",
-    icon: "⚡",
-    iconClass: "success",
+    title: '平均响应时间',
+    value: '123ms',
+    change: '-8.2%',
+    changeClass: 'positive',
+    icon: '⚡',
+    iconClass: 'success',
   },
   {
     id: 3,
-    title: "错误率",
-    value: "2.3%",
-    change: "+1.1%",
-    changeClass: "negative",
-    icon: "⚠️",
-    iconClass: "warning",
+    title: '错误率',
+    value: '2.3%',
+    change: '+1.1%',
+    changeClass: 'negative',
+    icon: '⚠️',
+    iconClass: 'warning',
   },
   {
     id: 4,
-    title: "系统负载",
-    value: "45%",
-    change: "-3.4%",
-    changeClass: "positive",
-    icon: "🏋️",
-    iconClass: "info",
+    title: '系统负载',
+    value: '45%',
+    change: '-3.4%',
+    changeClass: 'positive',
+    icon: '🏋️',
+    iconClass: 'info',
   },
-]);
+])
 
 // 时间标签
-const timeLabels = ref(["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"]);
+const timeLabels = ref(['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'])
 
 // 响应时间数据
 const responseTimeData = ref([
-  { height: 45, color: "#1890ff" },
-  { height: 38, color: "#1890ff" },
-  { height: 65, color: "#ff4d4f" },
-  { height: 52, color: "#1890ff" },
-  { height: 48, color: "#1890ff" },
-  { height: 35, color: "#1890ff" },
-]);
+  { height: 45, color: '#1890ff' },
+  { height: 38, color: '#1890ff' },
+  { height: 65, color: '#ff4d4f' },
+  { height: 52, color: '#1890ff' },
+  { height: 48, color: '#1890ff' },
+  { height: 35, color: '#1890ff' },
+])
 
 // 请求量数据
 const requestCountData = ref([
-  { height: 30, color: "#52c41a" },
-  { height: 25, color: "#52c41a" },
-  { height: 60, color: "#52c41a" },
-  { height: 75, color: "#52c41a" },
-  { height: 65, color: "#52c41a" },
-  { height: 45, color: "#52c41a" },
-]);
+  { height: 30, color: '#52c41a' },
+  { height: 25, color: '#52c41a' },
+  { height: 60, color: '#52c41a' },
+  { height: 75, color: '#52c41a' },
+  { height: 65, color: '#52c41a' },
+  { height: 45, color: '#52c41a' },
+])
 
 // 最近日志记录
 const recentLogs = ref([
   {
     id: 1,
-    time: "2026-03-23 14:30:22",
-    level: "INFO",
-    levelClass: "info",
-    module: "API",
-    message: "用户登录成功",
-    responseTime: "45ms",
+    time: '2026-03-23 14:30:22',
+    level: 'INFO',
+    levelClass: 'info',
+    module: 'API',
+    message: '用户登录成功',
+    responseTime: '45ms',
   },
   {
     id: 2,
-    time: "2026-03-23 14:28:15",
-    level: "ERROR",
-    levelClass: "error",
-    module: "Database",
-    message: "数据库连接超时",
-    responseTime: "2500ms",
+    time: '2026-03-23 14:28:15',
+    level: 'ERROR',
+    levelClass: 'error',
+    module: 'Database',
+    message: '数据库连接超时',
+    responseTime: '2500ms',
   },
   {
     id: 3,
-    time: "2026-03-23 14:25:47",
-    level: "INFO",
-    levelClass: "info",
-    module: "API",
-    message: "数据查询成功",
-    responseTime: "67ms",
+    time: '2026-03-23 14:25:47',
+    level: 'INFO',
+    levelClass: 'info',
+    module: 'API',
+    message: '数据查询成功',
+    responseTime: '67ms',
   },
   {
     id: 4,
-    time: "2026-03-23 14:22:18",
-    level: "WARN",
-    levelClass: "warning",
-    module: "Cache",
-    message: "缓存容量不足",
-    responseTime: "12ms",
+    time: '2026-03-23 14:22:18',
+    level: 'WARN',
+    levelClass: 'warning',
+    module: 'Cache',
+    message: '缓存容量不足',
+    responseTime: '12ms',
   },
   {
     id: 5,
-    time: "2026-03-23 14:18:55",
-    level: "INFO",
-    levelClass: "info",
-    module: "API",
-    message: "文件上传成功",
-    responseTime: "124ms",
+    time: '2026-03-23 14:18:55',
+    level: 'INFO',
+    levelClass: 'info',
+    module: 'API',
+    message: '文件上传成功',
+    responseTime: '124ms',
   },
-]);
+])
 
 // 页面加载时的操作
 onMounted(() => {
   // 这里可以添加数据加载逻辑
-  console.log("Logs dashboard loaded");
-});
+  console.log('Logs dashboard loaded')
+})
 </script>
 
 <style lang="less" scoped>

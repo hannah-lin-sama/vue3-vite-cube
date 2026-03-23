@@ -3,9 +3,9 @@
 </template>
 <script lang="ts" setup>
 defineOptions({
-  name: "UserIndexView",
-});
+  name: 'UserIndexView',
+})
 </script>
 <route lang="yaml">
-name: "user_index"
+name: 'user_index'
 </route>
