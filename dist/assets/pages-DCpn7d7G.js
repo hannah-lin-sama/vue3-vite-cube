@@ -1,0 +1,1 @@
+import{f as e,s as t,v as n}from"./runtime-core.esm-bundler-upKF5yPI.js";var r=e({name:`IndexView`,__name:`index`,setup(e){return(e,r)=>(n(),t(`div`))}});export{r as default};
