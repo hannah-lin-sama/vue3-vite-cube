@@ -1,8 +1,10 @@
 <template>
-  <div>dcdcdcd</div>
+  <div>
+    <p>仪表盘</p>
+  </div>
 </template>
 <script lang="ts" setup>
 defineOptions({
-  name: "HomeIndexView",
+  name: "HomeDashboardIndexView",
 });
 </script>

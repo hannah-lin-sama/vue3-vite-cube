@@ -1,18 +1,15 @@
 <template>
-  <div class="index">
-    <div>header</div>
-    <RouterView></RouterView>
-  </div>
+  <div></div>
 </template>
 <script lang="ts" setup>
 definePage({
-  redirect: '/home',
-  name: 'home_index',
+  redirect: "/home",
+  name: "layout",
   meta: {
-    title: 'Home',
+    title: "Home",
   },
-})
+});
 defineOptions({
-  name: 'IndexView',
-})
+  name: "IndexView",
+});
 </script>

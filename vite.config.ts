@@ -14,6 +14,11 @@ export default defineConfig({
       routesFolder: 'src/pages', // 默认 pages
       extensions: ['.vue'], // 匹配文件后缀
       dts: 'src/typed-router.d.ts', // 生成类型文件
+      // 出现 RangeError: Maximum call stack size exceeded
+      // getRouteName: (route) => {
+      //   console.log('getRouteName',route)
+      //   return route.name || route.path
+      // },
 
        // 添加调试选项
       logs: true,
@@ -29,7 +34,7 @@ export default defineConfig({
       watch: true, // 开启路由块文件监听
       // 开启实验性功能
       experimental: {
-        
+       
       },
     }),
     vue(),

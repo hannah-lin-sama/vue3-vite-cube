@@ -33,6 +33,12 @@
               <span class="nav-text">日志信息</span>
             </router-link>
           </li>
+          <li>
+            <router-link to="/home/dashboard" class="nav-link">
+              <span class="nav-icon">📊</span>
+              <span class="nav-text">Dashboard</span>
+            </router-link>
+          </li>
         </ul>
       </nav>
     </div>
@@ -47,7 +53,7 @@
           <!-- 语言选择 -->
           <div class="language-selector">
             <button class="language-btn">
-              {{ currentLanguage === 'zh' ? '中文' : 'English' }}
+              {{ currentLanguage === "zh" ? "中文" : "English" }}
               <span class="dropdown-icon">▼</span>
             </button>
           </div>
@@ -63,28 +69,29 @@
       <!-- 内容区域 -->
       <main class="content">
         <RouterView />
+        <RouterView name="logs" />
       </main>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
 definePage({
-  name: 'home',
+  name: "home",
   meta: {
-    title: 'Home',
+    title: "Home",
   },
-})
+});
 
 // 定义组件名称
 defineOptions({
-  name: 'HomeView',
-})
+  name: "HomeView",
+});
 
 // 语言切换
-const currentLanguage = ref('zh')
+const currentLanguage = ref("zh");
 </script>
 
 <style lang="less" scoped>
