@@ -33,9 +33,9 @@ export default defineConfig({
       // },
       watch: true, // 开启路由块文件监听
       // 开启实验性功能
-      experimental: {
+      // experimental: {
        
-      },
+      // },
     }),
     vue(),
     vueJsx(),
@@ -45,7 +45,7 @@ export default defineConfig({
     // alias: {
     //   '@': fileURLToPath(new URL('./src', import.meta.url))
     // },
-    tsconfigPaths: true,  // 自动读取 tsconfig paths
+    // tsconfigPaths: true,  // 自动读取 tsconfig paths
     alias: {
       '@': '/src',
     },
@@ -57,5 +57,13 @@ export default defineConfig({
         javascriptEnabled: true
       }
     }
-  }
+  },
+  mode: 'development',
+  // server: {
+  //   ws: false,
+  // },
+  // optimizeDeps: {
+  //   include: ['virtual:vue-inspector-path:load.js'],
+  // },
+
 })

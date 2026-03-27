@@ -1,5 +1,7 @@
 <template>
-  <div>dcdcdcd</div>
+  <div>
+    <p>Home Index</p>
+  </div>
 </template>
 <script lang="ts" setup>
 defineOptions({

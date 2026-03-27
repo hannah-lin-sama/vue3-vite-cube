@@ -12,4 +12,5 @@ router.afterEach((to, from) => {
   document.title = to.meta.title ? `${to.meta.title} ｜Vite Vue3 平台 ` : 'Vite Vue3 平台'
 })
 
+console.log('import.meta.hot', import.meta.hot)
 export default router

@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "vite",
+    "start1": "vite --experimentalBundle",
+    "start": "vite ",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "test:unit": "vitest",
@@ -13,7 +14,8 @@
     "lint": "run-s lint:*",
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
-    "format": "oxfmt src/"
+    "format": "oxfmt src/",
+    "test-vite": "node script/index.js"
   },
   "dependencies": {
     "pinia": "^3.0.4",

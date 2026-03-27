@@ -1,2 +1,7 @@
-# cube
- 立方体3D动画
+# vue3-vite-cube
+
+node v24.14.0
+
+```bash
+yarn install
+```

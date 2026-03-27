@@ -726,6 +726,10 @@ defineOptions({
     max-width: 95%;
   }
 }
+.cdss {
+  height: 200px;
+  width: 100%;
+}
 </style>
 
 <route lang="json">

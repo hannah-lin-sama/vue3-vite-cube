@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Vite Dev",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["--inspect-brk"],
+      "args": ["${workspaceFolder}/node_modules/vite/bin/vite.js", "dev"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**" // 默认排除 node_modules，需要手动允许
+      ],
+      "outFiles": ["${workspaceFolder}/node_modules/vite/dist/**/*.js"]
+    }
+  ]
+}
