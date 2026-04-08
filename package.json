@@ -65,6 +65,7 @@
     "@vue/runtime-vapor": "beta",
     "@vue/server-renderer": "beta",
     "@vue/shared": "beta",
-    "@vue/compat": "beta"
+    "@vue/compat": "beta",
+    "picomatch": "4.0.4"
   }
 }
