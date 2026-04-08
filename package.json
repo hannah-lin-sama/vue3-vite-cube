@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start1": "vite --experimentalBundle",
+    "start-runner": "vite --configLoader=runner",
     "start": "vite ",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",

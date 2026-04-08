@@ -21,7 +21,7 @@ export default defineConfig({
       // },
 
        // 添加调试选项
-      logs: true,
+      // logs: true,
 
       // routeBlockLang: 'json5', // 路由块语言，默认 json
       importMode: 'async',
@@ -39,16 +39,16 @@ export default defineConfig({
     }),
     vue(),
     vueJsx(),
-    vueDevTools(),
+    // vueDevTools(),
   ],
   resolve: {
     // alias: {
     //   '@': fileURLToPath(new URL('./src', import.meta.url))
     // },
-    // tsconfigPaths: true,  // 自动读取 tsconfig paths
     alias: {
       '@': '/src',
     },
+    // tsconfigPaths: true,  // 自动读取 tsconfig paths
   },
   css: {
     preprocessorOptions: {
@@ -65,5 +65,36 @@ export default defineConfig({
   // optimizeDeps: {
   //   include: ['virtual:vue-inspector-path:load.js'],
   // },
-
+  server: {
+    port: 5173, // 端口号
+    host: '0.0.0.0', // 监听所有网络接口
+    allowedHosts: ['localhost'], // 允许的主机名
+    open: true, // 自动打开浏览器
+    strictPort: true, // 严格端口号
+    proxy: {
+      // 简单字符串
+      '/api1': 'http://localhost:3000',
+      // 对象配置
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+      // 正则配置
+      '/api2': {
+        target: 'http://localhost:3002',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api2/, ''),
+      },
+    },
+    // cors: true, // 开启 CORS
+    // hmr: true,
+    // sourcemapIgnoreList: true, // 忽略的 sourcemap 文件
+    // 监听文件变化
+    // watch: {
+      
+    // }
+  }
 })
