@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>Home Index</p>
     <p @click="handleClick">Home Index</p>
   </div>
 </template>
