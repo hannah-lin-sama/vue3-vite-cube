@@ -2,8 +2,8 @@
   <div class="user-form-container">
     <!-- 页面标题 -->
     <div class="page-header">
-      <h2>{{ $route.params?.id ? '编辑用户' : '新增用户' }}</h2>
-      <p>{{ $route.params?.id ? '修改用户信息' : '添加新用户' }}</p>
+      <h2>{{ ($route.params as { id: string })?.id ? '编辑用户' : '新增用户' }}</h2>
+      <p>{{ ($route.params as { id: string })?.id ? '修改用户信息' : '添加新用户' }}</p>
     </div>
 
     <!-- 表单区域 -->
@@ -54,7 +54,7 @@
         <div class="form-actions">
           <button type="button" class="cancel-button" @click="handleCancel">取消</button>
           <button type="submit" class="submit-button">
-            {{ $route.params?.id ? '保存' : '新增' }}
+            {{ ($route.params as { id: string })?.id ? '保存' : '新增' }}
           </button>
         </div>
       </form>
@@ -92,7 +92,7 @@ const formData = reactive({
 
 // 初始化表单数据
 onMounted(() => {
-  if (route.params?.id) {
+  if ((route.params as { id: string }).id) {
     // 编辑模式，填充表单数据
     Object.assign(formData, props.user)
   } else {
@@ -119,7 +119,7 @@ const handleSubmit = () => {
 
   // 模拟API调用
   setTimeout(() => {
-    if (route.params?.id) {
+    if ((route.params as { id: string }).id) {
       // 编辑用户
       console.log('编辑用户:', formData)
       alert('用户信息已更新')

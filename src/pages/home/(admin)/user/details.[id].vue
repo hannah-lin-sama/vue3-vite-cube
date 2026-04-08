@@ -168,7 +168,7 @@ const handleEdit = () => {
 onMounted(() => {
   // 这里可以通过 API 获取用户数据
   // 模拟从路由参数获取用户ID
-  const userId = route.params.id
+  const userId = (route.params as { id: string }).id
   if (userId) {
     // 根据ID获取用户数据
     console.log('获取用户数据:', userId)

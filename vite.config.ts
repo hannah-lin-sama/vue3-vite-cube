@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import vueDevTools from 'vite-plugin-vue-devtools'
+// import vueDevTools from 'vite-plugin-vue-devtools'
 import VueRouter from 'vue-router/vite'
 
 
@@ -58,7 +58,12 @@ export default defineConfig({
       }
     }
   },
-  mode: 'development',
+  build: {
+    outDir: 'dist-cube',
+    assetsDir: 'public',
+    minify: 'terser',
+  },
+  // mode: 'development',
   // server: {
   //   ws: false,
   // },

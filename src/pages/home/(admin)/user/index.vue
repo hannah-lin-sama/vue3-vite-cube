@@ -127,7 +127,7 @@ const pageSize = ref(10)
 const showDeleteDialog = ref(false)
 
 // 待删除的用户ID
-const deleteUserId = ref('')
+const deleteUserId = ref<number>()
 
 // 模拟用户数据
 const users = ref([
