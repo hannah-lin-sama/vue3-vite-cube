@@ -1,1 +1,0 @@
-import{f as e,g as t,i as n,s as r,v as i}from"./runtime-core.esm-bundler-upKF5yPI.js";var a=e({name:`IndexLogsView`,__name:`index@logs`,setup(e){return t(()=>{console.log(`IndexLogsView mounted`)}),(e,t)=>(i(),r(`div`,null,[...t[0]||=[n(`p`,null,`日志管理xxxx`,-1)]]))}});export{a as default};
