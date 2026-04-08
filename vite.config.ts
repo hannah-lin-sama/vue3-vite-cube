@@ -61,7 +61,7 @@ export default defineConfig({
   build: {
     outDir: 'dist-cube',
     assetsDir: 'public',
-    minify: 'terser',
+    minify: 'oxc', // oxc false terser esbuild
   },
   // mode: 'development',
   // server: {

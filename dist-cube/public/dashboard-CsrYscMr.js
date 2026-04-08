@@ -1,0 +1,1 @@
+import{f as e,s as t,v as n}from"./runtime-core.esm-bundler-HXD8ebTp.js";var r=e({name:`HomeDashboardIndexView`,__name:`index`,setup(e){return(e,r)=>(n(),t(`div`))}});export{r as default};
