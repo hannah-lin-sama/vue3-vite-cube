@@ -1,0 +1,1 @@
+import{f as e,i as t,s as n,v as r}from"./runtime-core.esm-bundler-HXD8ebTp.js";import{r as i}from"./index-B9iM-AOo.js";var a=i(e({name:`HomeIndexView`,__name:`index`,setup(e){let i=()=>{console.log(`click`)};return(e,a)=>(r(),n(`div`,null,[a[0]||=t(`p`,null,`Home Index`,-1),t(`p`,{onClick:i},`Home Index`)]))}}),[[`__scopeId`,`data-v-e50e5d91`]]);export{a as default};
