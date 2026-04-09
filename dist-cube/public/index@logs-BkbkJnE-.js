@@ -1,0 +1,2 @@
+/* See licenses of bundled dependencies at https://example.com/license.md */
+import{f as e,g as t,i as n,s as r,v as i}from"./runtime-core.esm-bundler-CCkq2IEm.js";import{r as a}from"./index-Dz7Yz-ir.js";var o=a(e({name:`IndexLogsView`,__name:`index@logs`,setup(e){return t(()=>{console.log(`IndexLogsView mounted`)}),(e,t)=>(i(),r(`div`,null,[...t[0]||=[n(`p`,{class:`title`},`日志管理xxxx`,-1),n(`div`,null,`xxcd`,-1)]]))}}),[[`__scopeId`,`data-v-2d71a226`]]);export{o as default};

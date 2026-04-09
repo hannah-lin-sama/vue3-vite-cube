@@ -1,1 +1,0 @@
-import{d as e,f as t,s as n,v as r,x as i}from"./runtime-core.esm-bundler-HXD8ebTp.js";var a=t({name:`HomeDashboardView`,__name:`dashboard`,setup(t){return(t,a)=>{let o=i(`router-view`);return r(),n(`div`,null,[e(o),e(o,{name:`logs`})])}}});export{a as default};

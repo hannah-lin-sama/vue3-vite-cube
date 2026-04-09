@@ -1,0 +1,2 @@
+/* See licenses of bundled dependencies at https://example.com/license.md */
+import{a as e,f as t,v as n,x as r}from"./runtime-core.esm-bundler-CCkq2IEm.js";import{t as i}from"./route-block-CdF-B7XM.js";var a=t({name:`RoleView`,__name:`role`,setup(t){return(t,i)=>{let a=r(`RouterView`);return n(),e(a)}}});typeof i==`function`&&i(a);var o=a;export{o as default};

@@ -1,1 +1,0 @@
-import{f as e,i as t,s as n,v as r}from"./runtime-core.esm-bundler-HXD8ebTp.js";var i=e({name:`RoleIndexView`,__name:`index`,setup(e){return(e,i)=>(r(),n(`div`,null,[...i[0]||=[t(`p`,null,`角色管理`,-1),t(`h3`,null,`角色列表`,-1),t(`div`,null,`cdfdfdd`,-1)]]))}});export{i as default};

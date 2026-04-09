@@ -62,6 +62,14 @@ export default defineConfig({
     outDir: 'dist-cube',
     assetsDir: 'public',
     minify: 'oxc', // oxc false terser esbuild
+    manifest: true, // 生成 manifest.json 文件
+    license: true, // 生成 license.md 文件
+    rolldownOptions: {
+      output: {
+        postBanner:
+          '/* See licenses of bundled dependencies at https://example.com/license.md */',
+      },
+    },
   },
   // mode: 'development',
   // server: {

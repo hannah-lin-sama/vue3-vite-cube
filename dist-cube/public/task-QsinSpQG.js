@@ -1,1 +1,0 @@
-import{a as e,f as t,v as n,x as r}from"./runtime-core.esm-bundler-HXD8ebTp.js";import{t as i}from"./route-block-BLMuEA20.js";var a=t({name:`TaskIndexView`,__name:`index`,setup(t){return(t,i)=>{let a=r(`router-view`);return n(),e(a)}}});typeof i==`function`&&i(a);var o=a;export{o as default};

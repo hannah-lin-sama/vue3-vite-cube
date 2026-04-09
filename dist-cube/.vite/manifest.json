@@ -1,0 +1,242 @@
+{
+  "_route-block-CdF-B7XM.js": {
+    "file": "public/route-block-CdF-B7XM.js",
+    "name": "route-block"
+  },
+  "_runtime-core.esm-bundler-CCkq2IEm.js": {
+    "file": "public/runtime-core.esm-bundler-CCkq2IEm.js",
+    "name": "runtime-core.esm-bundler"
+  },
+  "index.html": {
+    "file": "public/index-Dz7Yz-ir.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ],
+    "dynamicImports": [
+      "src/pages/index.vue",
+      "src/pages/[...path].vue",
+      "src/pages/home.vue",
+      "src/pages/home/(admin)/role/index.vue",
+      "src/pages/home/(admin)/user/index.vue",
+      "src/pages/home/(admin)/user/create.[[id]].vue",
+      "src/pages/home/(admin)/user/details.[id].vue",
+      "src/pages/home/index.vue",
+      "src/pages/home/index@logs.vue",
+      "src/pages/home/dashboard.vue",
+      "src/pages/home/dashboard/index.vue",
+      "src/pages/home/dashboard/index@logs.vue",
+      "src/pages/home/role.vue",
+      "src/pages/home/task.vue",
+      "src/pages/home/task/index.vue",
+      "src/pages/home/user.vue",
+      "src/pages/login.vue"
+    ],
+    "css": [
+      "public/index-DuS5nk76.css"
+    ]
+  },
+  "src/pages/[...path].vue": {
+    "file": "public/_...path_-CdxYbm9G.js",
+    "name": "_...path_",
+    "src": "src/pages/[...path].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ],
+    "css": [
+      "public/_..-D1Pn6FJf.css"
+    ]
+  },
+  "src/pages/home.vue": {
+    "file": "public/home-B7j9z8If.js",
+    "name": "home",
+    "src": "src/pages/home.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ],
+    "css": [
+      "public/home-DhYjxGsm.css"
+    ]
+  },
+  "src/pages/home/(admin)/role/index.vue": {
+    "file": "public/role-Cbvzg0YR.js",
+    "name": "role",
+    "src": "src/pages/home/(admin)/role/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ]
+  },
+  "src/pages/home/(admin)/user/create.[[id]].vue": {
+    "file": "public/create.__id__-DpexhTUK.js",
+    "name": "create.__id__",
+    "src": "src/pages/home/(admin)/user/create.[[id]].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_route-block-CdF-B7XM.js",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ],
+    "css": [
+      "public/create-CdAHn783.css"
+    ]
+  },
+  "src/pages/home/(admin)/user/details.[id].vue": {
+    "file": "public/details._id_-CdVUSMB8.js",
+    "name": "details._id_",
+    "src": "src/pages/home/(admin)/user/details.[id].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_route-block-CdF-B7XM.js",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ],
+    "css": [
+      "public/details-C0zKi6c1.css"
+    ]
+  },
+  "src/pages/home/(admin)/user/index.vue": {
+    "file": "public/user-DCooyQv1.js",
+    "name": "user",
+    "src": "src/pages/home/(admin)/user/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_route-block-CdF-B7XM.js",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ],
+    "css": [
+      "public/user-D1_Av2vj.css"
+    ]
+  },
+  "src/pages/home/dashboard.vue": {
+    "file": "public/dashboard-BfkTXYRb.js",
+    "name": "dashboard",
+    "src": "src/pages/home/dashboard.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ]
+  },
+  "src/pages/home/dashboard/index.vue": {
+    "file": "public/dashboard-BANw8jY5.js",
+    "name": "dashboard",
+    "src": "src/pages/home/dashboard/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ]
+  },
+  "src/pages/home/dashboard/index@logs.vue": {
+    "file": "public/index@logs-Bs3S4g70.js",
+    "name": "index@logs",
+    "src": "src/pages/home/dashboard/index@logs.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ],
+    "css": [
+      "public/index@logs-Dvg2KyJu.css"
+    ]
+  },
+  "src/pages/home/index.vue": {
+    "file": "public/home-CscH6NN4.js",
+    "name": "home",
+    "src": "src/pages/home/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ],
+    "css": [
+      "public/home-CObcq0PE.css"
+    ]
+  },
+  "src/pages/home/index@logs.vue": {
+    "file": "public/index@logs-BkbkJnE-.js",
+    "name": "index@logs",
+    "src": "src/pages/home/index@logs.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ],
+    "css": [
+      "public/index@logs-tIjP9TRT.css"
+    ]
+  },
+  "src/pages/home/role.vue": {
+    "file": "public/role-VsbgUxGV.js",
+    "name": "role",
+    "src": "src/pages/home/role.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_route-block-CdF-B7XM.js",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ]
+  },
+  "src/pages/home/task.vue": {
+    "file": "public/task-yVJjm6IJ.js",
+    "name": "task",
+    "src": "src/pages/home/task.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_route-block-CdF-B7XM.js",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ],
+    "css": [
+      "public/task-BiiI5Q-P.css"
+    ]
+  },
+  "src/pages/home/task/index.vue": {
+    "file": "public/task-B67nWLt2.js",
+    "name": "task",
+    "src": "src/pages/home/task/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_route-block-CdF-B7XM.js",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ]
+  },
+  "src/pages/home/user.vue": {
+    "file": "public/user-Bysk300H.js",
+    "name": "user",
+    "src": "src/pages/home/user.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_route-block-CdF-B7XM.js",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ]
+  },
+  "src/pages/index.vue": {
+    "file": "public/pages-EwXAa0sX.js",
+    "name": "pages",
+    "src": "src/pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ]
+  },
+  "src/pages/login.vue": {
+    "file": "public/login-g0GDfIaA.js",
+    "name": "login",
+    "src": "src/pages/login.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_route-block-CdF-B7XM.js",
+      "_runtime-core.esm-bundler-CCkq2IEm.js"
+    ],
+    "css": [
+      "public/login-dhxExp0_.css"
+    ]
+  }
+}
