@@ -1,20 +1,15 @@
+<template>
+  <TabOne v-model:tabName.upper="name" v-model:tabId.max="id" />
+</template>
+
 <script setup lang="ts">
-import { ref as myRef } from 'vue'
+import TabOne from '@/pages/cloud/components/tabOne.vue'
+import { ref } from 'vue'
 
-const count = myRef(0)
-
-const click = () => {
-  count.value++
-}
+const name = ref('CloudView')
+const id = ref(123)
 
 defineOptions({
   name: 'CloudView'
 })
 </script>
-
-<template>
-  <div>
-    <h3>cloud view</h3>
-    <button @click="click">click</button>
-  </div>
-</template>

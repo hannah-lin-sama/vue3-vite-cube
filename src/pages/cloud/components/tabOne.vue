@@ -1,18 +1,20 @@
 <template>
   <div>
-    <h3>tabOne</h3>
-    <div>
-      <input v-model="input" type="text" />
-    </div>
+    <input v-model.trim="tabName" />
+    <input v-model.number="tabId" />
   </div>
 </template>
 <script setup lang="ts">
-import { watch } from 'vue'
-
-const input = defineModel()
-console.log(input)
-watch(input, newVal => {
-  console.log(newVal)
+const [tabName, tabNameModifiers] = defineModel('tabName', {
+  set(val: string) {
+    return tabNameModifiers.upper ? val.toUpperCase() : val.toLowerCase()
+  }
+})
+const [tabId, tabIdModifiers] = defineModel('tabId', {
+  set(val: number) {
+    const len = val.toString().length
+    return tabIdModifiers.max ? (len <= 10 ? val : Number(val.toString().slice(0, 10))) : val
+  }
 })
 
 defineOptions({
