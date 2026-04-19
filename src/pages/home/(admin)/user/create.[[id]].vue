@@ -11,44 +11,22 @@
       <form @submit.prevent="handleSubmit">
         <div class="form-group">
           <label>用户名称 <span class="required">*</span></label>
-          <input
-            type="text"
-            v-model="formData.name"
-            placeholder="请输入用户名称"
-            required
-            class="form-input"
-          />
+          <input type="text" v-model="formData.name" placeholder="请输入用户名称" required class="form-input" />
         </div>
 
         <div class="form-group">
           <label>地址</label>
-          <input
-            type="text"
-            v-model="formData.address"
-            placeholder="请输入地址"
-            class="form-input"
-          />
+          <input type="text" v-model="formData.address" placeholder="请输入地址" class="form-input" />
         </div>
 
         <div class="form-group">
           <label>邮箱 <span class="required">*</span></label>
-          <input
-            type="email"
-            v-model="formData.email"
-            placeholder="请输入邮箱"
-            required
-            class="form-input"
-          />
+          <input type="email" v-model="formData.email" placeholder="请输入邮箱" required class="form-input" />
         </div>
 
         <div class="form-group">
           <label>联系方式</label>
-          <input
-            type="tel"
-            v-model="formData.phone"
-            placeholder="请输入联系方式"
-            class="form-input"
-          />
+          <input type="tel" v-model="formData.phone" placeholder="请输入联系方式" class="form-input" />
         </div>
 
         <div class="form-actions">
@@ -73,8 +51,8 @@ const route = useRoute()
 const props = defineProps({
   user: {
     type: Object,
-    default: null,
-  },
+    default: null
+  }
 })
 
 // 判断是否为编辑模式
@@ -87,7 +65,7 @@ const formData = reactive({
   address: '',
   email: '',
   phone: '',
-  avatar: '',
+  avatar: ''
 })
 
 // 初始化表单数据
@@ -109,7 +87,7 @@ const resetForm = () => {
     address: '',
     email: '',
     phone: '',
-    avatar: '',
+    avatar: ''
   })
 }
 
@@ -128,7 +106,7 @@ const handleSubmit = () => {
       const newUser = {
         ...formData,
         id: Date.now(), // 模拟生成ID
-        avatar: `https://picsum.photos/seed/user${Date.now()}/100/100`,
+        avatar: `https://picsum.photos/seed/user${Date.now()}/100/100`
       }
       console.log('新增用户:', newUser)
       alert('用户已新增')
@@ -144,7 +122,7 @@ const handleCancel = () => {
 }
 
 defineOptions({
-  name: 'UserCreateView',
+  name: 'UserCreateView'
 })
 </script>
 

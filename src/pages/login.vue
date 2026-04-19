@@ -106,13 +106,13 @@ const router = useRouter()
 const form = reactive({
   username: '',
   password: '',
-  remember: false,
+  remember: false
 })
 
 // 错误信息
 const errors = reactive({
   username: '',
-  password: '',
+  password: ''
 })
 
 // 状态
@@ -153,7 +153,7 @@ const handleLogin = async () => {
 
   try {
     // 这里可以替换为实际的登录API调用
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    await new Promise(resolve => setTimeout(resolve, 1500))
 
     // 登录成功后跳转到首页
     router.push('/home')
@@ -166,7 +166,7 @@ const handleLogin = async () => {
 }
 
 defineOptions({
-  name: 'LoginView',
+  name: 'LoginView'
 })
 </script>
 

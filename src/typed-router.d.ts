@@ -41,13 +41,7 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       '/cloud/' | '/cloud/components/tabOne' | '/cloud/components/tabTwo'
     >
-    '/cloud/': RouteRecordInfo<
-      '/cloud/',
-      '/cloud',
-      Record<never, never>,
-      Record<never, never>,
-      never
-    >
+    '/cloud/': RouteRecordInfo<'/cloud/', '/cloud', Record<never, never>, Record<never, never>, never>
     '/cloud/components/tabOne': RouteRecordInfo<
       '/cloud/components/tabOne',
       '/cloud/components/tabOne',
@@ -110,34 +104,10 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       never
     >
-    role_index: RouteRecordInfo<
-      'role_index',
-      '/home/role',
-      Record<never, never>,
-      Record<never, never>,
-      never
-    >
-    task: RouteRecordInfo<
-      'task',
-      '/home/task',
-      Record<never, never>,
-      Record<never, never>,
-      'task_index'
-    >
-    task_index: RouteRecordInfo<
-      'task_index',
-      '/home/task',
-      Record<never, never>,
-      Record<never, never>,
-      never
-    >
-    user_index: RouteRecordInfo<
-      'user_index',
-      '/home/user',
-      Record<never, never>,
-      Record<never, never>,
-      never
-    >
+    role_index: RouteRecordInfo<'role_index', '/home/role', Record<never, never>, Record<never, never>, never>
+    task: RouteRecordInfo<'task', '/home/task', Record<never, never>, Record<never, never>, 'task_index'>
+    task_index: RouteRecordInfo<'task_index', '/home/task', Record<never, never>, Record<never, never>, never>
+    user_index: RouteRecordInfo<'user_index', '/home/user', Record<never, never>, Record<never, never>, never>
     login: RouteRecordInfo<'login', '/login', Record<never, never>, Record<never, never>, never>
   }
 

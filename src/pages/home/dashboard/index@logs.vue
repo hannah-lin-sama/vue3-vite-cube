@@ -112,7 +112,7 @@
 import { ref, onMounted } from 'vue'
 
 defineOptions({
-  name: 'HomeDashboardIndexLogsView',
+  name: 'HomeDashboardIndexLogsView'
 })
 
 // 时间范围选项
@@ -120,7 +120,7 @@ const timeRanges = [
   { label: '过去24小时', value: '24h' },
   { label: '过去7天', value: '7d' },
   { label: '过去30天', value: '30d' },
-  { label: '过去90天', value: '90d' },
+  { label: '过去90天', value: '90d' }
 ]
 
 // 选中的时间范围
@@ -135,7 +135,7 @@ const metrics = ref([
     change: '+12.5%',
     changeClass: 'positive',
     icon: '📈',
-    iconClass: 'primary',
+    iconClass: 'primary'
   },
   {
     id: 2,
@@ -144,7 +144,7 @@ const metrics = ref([
     change: '-8.2%',
     changeClass: 'positive',
     icon: '⚡',
-    iconClass: 'success',
+    iconClass: 'success'
   },
   {
     id: 3,
@@ -153,7 +153,7 @@ const metrics = ref([
     change: '+1.1%',
     changeClass: 'negative',
     icon: '⚠️',
-    iconClass: 'warning',
+    iconClass: 'warning'
   },
   {
     id: 4,
@@ -162,8 +162,8 @@ const metrics = ref([
     change: '-3.4%',
     changeClass: 'positive',
     icon: '🏋️',
-    iconClass: 'info',
-  },
+    iconClass: 'info'
+  }
 ])
 
 // 时间标签
@@ -176,7 +176,7 @@ const responseTimeData = ref([
   { height: 65, color: '#ff4d4f' },
   { height: 52, color: '#1890ff' },
   { height: 48, color: '#1890ff' },
-  { height: 35, color: '#1890ff' },
+  { height: 35, color: '#1890ff' }
 ])
 
 // 请求量数据
@@ -186,7 +186,7 @@ const requestCountData = ref([
   { height: 60, color: '#52c41a' },
   { height: 75, color: '#52c41a' },
   { height: 65, color: '#52c41a' },
-  { height: 45, color: '#52c41a' },
+  { height: 45, color: '#52c41a' }
 ])
 
 // 最近日志记录
@@ -198,7 +198,7 @@ const recentLogs = ref([
     levelClass: 'info',
     module: 'API',
     message: '用户登录成功',
-    responseTime: '45ms',
+    responseTime: '45ms'
   },
   {
     id: 2,
@@ -207,7 +207,7 @@ const recentLogs = ref([
     levelClass: 'error',
     module: 'Database',
     message: '数据库连接超时',
-    responseTime: '2500ms',
+    responseTime: '2500ms'
   },
   {
     id: 3,
@@ -216,7 +216,7 @@ const recentLogs = ref([
     levelClass: 'info',
     module: 'API',
     message: '数据查询成功',
-    responseTime: '67ms',
+    responseTime: '67ms'
   },
   {
     id: 4,
@@ -225,7 +225,7 @@ const recentLogs = ref([
     levelClass: 'warning',
     module: 'Cache',
     message: '缓存容量不足',
-    responseTime: '12ms',
+    responseTime: '12ms'
   },
   {
     id: 5,
@@ -234,8 +234,8 @@ const recentLogs = ref([
     levelClass: 'info',
     module: 'API',
     message: '文件上传成功',
-    responseTime: '124ms',
-  },
+    responseTime: '124ms'
+  }
 ])
 
 // 页面加载时的操作

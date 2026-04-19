@@ -3,6 +3,6 @@
 </template>
 <script setup lang="ts">
 defineOptions({
-  name: 'CloudIndexView',
+  name: 'CloudIndexView'
 })
 </script>

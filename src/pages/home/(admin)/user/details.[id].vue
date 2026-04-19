@@ -119,7 +119,7 @@ const user = ref({
   avatar: 'https://picsum.photos/seed/user1/200/200',
   address: '北京市朝阳区',
   email: 'zhangsan@example.com',
-  phone: '13800138001',
+  phone: '13800138001'
 })
 
 // 模拟活动记录
@@ -127,23 +127,23 @@ const activities = ref([
   {
     icon: '📝',
     text: '更新了个人信息',
-    time: '2026-03-20 14:30',
+    time: '2026-03-20 14:30'
   },
   {
     icon: '🔑',
     text: '登录了系统',
-    time: '2026-03-19 09:15',
+    time: '2026-03-19 09:15'
   },
   {
     icon: '📤',
     text: '导出了数据报表',
-    time: '2026-03-18 16:45',
+    time: '2026-03-18 16:45'
   },
   {
     icon: '📥',
     text: '上传了文件',
-    time: '2026-03-17 11:20',
-  },
+    time: '2026-03-17 11:20'
+  }
 ])
 
 // 格式化日期
@@ -176,7 +176,7 @@ onMounted(() => {
 })
 
 defineOptions({
-  name: 'UserDetailsView',
+  name: 'UserDetailsView'
 })
 </script>
 

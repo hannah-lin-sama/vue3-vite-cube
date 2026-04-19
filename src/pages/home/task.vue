@@ -64,9 +64,7 @@
               </div>
             </td>
             <td>{{ task.page }}</td>
-            <td>
-              {{ task.platform.type === 'mobile' ? '手机' : '电脑' }}<br />{{ task.platform.model }}
-            </td>
+            <td>{{ task.platform.type === 'mobile' ? '手机' : '电脑' }}<br />{{ task.platform.model }}</td>
             <td>{{ task.browser.name }} {{ task.browser.version }}</td>
             <td>
               <span :class="['operation-type', task.operationType]">
@@ -122,27 +120,21 @@ const generateMockData = () => {
     { id: 2, name: '李四', avatar: 'https://picsum.photos/seed/user2/100/100' },
     { id: 3, name: '王五', avatar: 'https://picsum.photos/seed/user3/100/100' },
     { id: 4, name: '赵六', avatar: 'https://picsum.photos/seed/user4/100/100' },
-    { id: 5, name: '钱七', avatar: 'https://picsum.photos/seed/user5/100/100' },
+    { id: 5, name: '钱七', avatar: 'https://picsum.photos/seed/user5/100/100' }
   ]
 
   const pages = ['首页', '用户管理', '角色管理', '任务管理', '系统设置', '数据统计']
   const operationTypes = ['create', 'update', 'delete', 'view', 'export']
   const statuses = ['success', 'warning', 'error']
 
-  const mobileModels = [
-    'iPhone 14',
-    'iPhone 15',
-    'Samsung Galaxy S23',
-    'Huawei Mate 50',
-    'Xiaomi 13',
-  ]
+  const mobileModels = ['iPhone 14', 'iPhone 15', 'Samsung Galaxy S23', 'Huawei Mate 50', 'Xiaomi 13']
   const desktopModels = ['MacBook Pro', 'Dell XPS', 'HP Spectre', 'Lenovo ThinkPad', 'Asus ZenBook']
 
   const browsers = [
     { name: 'Chrome', version: '120.0.0.0' },
     { name: 'Firefox', version: '115.0.0' },
     { name: 'Safari', version: '16.0' },
-    { name: 'Edge', version: '120.0.0.0' },
+    { name: 'Edge', version: '120.0.0.0' }
   ]
 
   for (let i = 1; i <= 300; i++) {
@@ -156,14 +148,14 @@ const generateMockData = () => {
         type: isMobile ? 'mobile' : 'desktop',
         model: isMobile
           ? mobileModels[Math.floor(Math.random() * mobileModels.length)]
-          : desktopModels[Math.floor(Math.random() * desktopModels.length)],
+          : desktopModels[Math.floor(Math.random() * desktopModels.length)]
       },
       browser: browsers[Math.floor(Math.random() * browsers.length)],
       operationType: operationTypes[Math.floor(Math.random() * operationTypes.length)],
       ip: `${Math.floor(Math.random() * 256)}.${Math.floor(
-        Math.random() * 256,
+        Math.random() * 256
       )}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}`,
-      status: statuses[Math.floor(Math.random() * statuses.length)],
+      status: statuses[Math.floor(Math.random() * statuses.length)]
     })
   }
 
@@ -211,7 +203,7 @@ const handleScroll = () => {
 
 // 过滤后的任务数据
 const filteredTasks = computed(() => {
-  return tasks.value.filter((task) => {
+  return tasks.value.filter(task => {
     // 搜索关键词过滤
     const matchesSearch =
       !searchKeyword.value ||
@@ -264,7 +256,7 @@ const formatDate = (date: Date) => {
     day: '2-digit',
     hour: '2-digit',
     minute: '2-digit',
-    second: '2-digit',
+    second: '2-digit'
   })
 }
 
@@ -275,7 +267,7 @@ const getOperationTypeText = (type: string) => {
     update: '更新',
     delete: '删除',
     view: '查看',
-    export: '导出',
+    export: '导出'
   }
   return typeMap[type] || type
 }
@@ -285,7 +277,7 @@ const getStatusText = (status: string) => {
   const statusMap: Record<string, string> = {
     success: '成功',
     warning: '警告',
-    error: '错误',
+    error: '错误'
   }
   return statusMap[status] || status
 }

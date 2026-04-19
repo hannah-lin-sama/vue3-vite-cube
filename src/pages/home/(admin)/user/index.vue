@@ -22,9 +22,7 @@
 
       <!-- 操作按钮组 -->
       <div class="action-buttons">
-        <button class="primary-button" @click="$router.push('/home/user/create')">
-          ➕ 新增用户
-        </button>
+        <button class="primary-button" @click="$router.push('/home/user/create')">➕ 新增用户</button>
         <button class="secondary-button" @click="handleDownload">📥 下载列表</button>
       </div>
     </div>
@@ -70,25 +68,11 @@
 
     <!-- 分页 -->
     <div class="pagination" v-if="totalUsers > 0">
-      <button class="pagination-button" :disabled="currentPage === 1" @click="currentPage = 1">
-        首页
-      </button>
-      <button class="pagination-button" :disabled="currentPage === 1" @click="currentPage--">
-        上一页
-      </button>
+      <button class="pagination-button" :disabled="currentPage === 1" @click="currentPage = 1">首页</button>
+      <button class="pagination-button" :disabled="currentPage === 1" @click="currentPage--">上一页</button>
       <span class="pagination-info"> 第 {{ currentPage }} 页，共 {{ totalPages }} 页 </span>
-      <button
-        class="pagination-button"
-        :disabled="currentPage === totalPages"
-        @click="currentPage++"
-      >
-        下一页
-      </button>
-      <button
-        class="pagination-button"
-        :disabled="currentPage === totalPages"
-        @click="currentPage = totalPages"
-      >
+      <button class="pagination-button" :disabled="currentPage === totalPages" @click="currentPage++">下一页</button>
+      <button class="pagination-button" :disabled="currentPage === totalPages" @click="currentPage = totalPages">
         末页
       </button>
     </div>
@@ -137,7 +121,7 @@ const users = ref([
     avatar: 'https://picsum.photos/seed/user1/100/100',
     address: '北京市朝阳区',
     email: 'zhangsan@example.com',
-    phone: '13800138001',
+    phone: '13800138001'
   },
   {
     id: 2,
@@ -145,7 +129,7 @@ const users = ref([
     avatar: 'https://picsum.photos/seed/user2/100/100',
     address: '上海市浦东新区',
     email: 'lisi@example.com',
-    phone: '13900139001',
+    phone: '13900139001'
   },
   {
     id: 3,
@@ -153,7 +137,7 @@ const users = ref([
     avatar: 'https://picsum.photos/seed/user3/100/100',
     address: '广州市天河区',
     email: 'wangwu@example.com',
-    phone: '13700137001',
+    phone: '13700137001'
   },
   {
     id: 4,
@@ -161,7 +145,7 @@ const users = ref([
     avatar: 'https://picsum.photos/seed/user4/100/100',
     address: '深圳市南山区',
     email: 'zhaoliu@example.com',
-    phone: '13600136001',
+    phone: '13600136001'
   },
   {
     id: 5,
@@ -169,7 +153,7 @@ const users = ref([
     avatar: 'https://picsum.photos/seed/user5/100/100',
     address: '杭州市西湖区',
     email: 'qianqi@example.com',
-    phone: '13500135001',
+    phone: '13500135001'
   },
   {
     id: 6,
@@ -177,7 +161,7 @@ const users = ref([
     avatar: 'https://picsum.photos/seed/user6/100/100',
     address: '成都市锦江区',
     email: 'sunba@example.com',
-    phone: '13400134001',
+    phone: '13400134001'
   },
   {
     id: 7,
@@ -185,7 +169,7 @@ const users = ref([
     avatar: 'https://picsum.photos/seed/user7/100/100',
     address: '武汉市武昌区',
     email: 'zhoujiu@example.com',
-    phone: '13300133001',
+    phone: '13300133001'
   },
   {
     id: 8,
@@ -193,7 +177,7 @@ const users = ref([
     avatar: 'https://picsum.photos/seed/user8/100/100',
     address: '西安市雁塔区',
     email: 'wushi@example.com',
-    phone: '13200132001',
+    phone: '13200132001'
   },
   {
     id: 9,
@@ -201,7 +185,7 @@ const users = ref([
     avatar: 'https://picsum.photos/seed/user9/100/100',
     address: '南京市玄武区',
     email: 'zhengshiyi@example.com',
-    phone: '13100131001',
+    phone: '13100131001'
   },
   {
     id: 10,
@@ -209,7 +193,7 @@ const users = ref([
     avatar: 'https://picsum.photos/seed/user10/100/100',
     address: '重庆市渝中区',
     email: 'wangshier@example.com',
-    phone: '13000130001',
+    phone: '13000130001'
   },
   {
     id: 11,
@@ -217,8 +201,8 @@ const users = ref([
     avatar: 'https://picsum.photos/seed/user11/100/100',
     address: '天津市和平区',
     email: 'lishisan@example.com',
-    phone: '13800138002',
-  },
+    phone: '13800138002'
+  }
 ])
 
 // 过滤后的用户数据
@@ -226,9 +210,7 @@ const filteredUsers = computed(() => {
   if (!searchKeyword.value) {
     return users.value
   }
-  return users.value.filter((user) =>
-    user.name.toLowerCase().includes(searchKeyword.value.toLowerCase()),
-  )
+  return users.value.filter(user => user.name.toLowerCase().includes(searchKeyword.value.toLowerCase()))
 })
 
 // 分页后的用户数据
@@ -271,7 +253,7 @@ const handleDelete = (userId: number) => {
 
 // 确认删除
 const confirmDelete = () => {
-  users.value = users.value.filter((user) => user.id !== deleteUserId.value)
+  users.value = users.value.filter(user => user.id !== deleteUserId.value)
   showDeleteDialog.value = false
 }
 
@@ -282,7 +264,7 @@ const handleDownload = () => {
 }
 
 defineOptions({
-  name: 'UserView',
+  name: 'UserView'
 })
 </script>
 

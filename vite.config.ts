@@ -31,13 +31,15 @@ export default defineConfig({
       // beforeWriteFiles: (editedRoutes) => {
       //   console.log('beforeWriteFiles', editedRoutes)
       // },
-      watch: true, // 开启路由块文件监听
+      // watch: true, // 开启路由块文件监听
       // 开启实验性功能
       // experimental: {
        
       // },
     }),
-    vue(),
+    vue({
+      
+    }),
     vueJsx(),
     // vueDevTools(),
   ],
@@ -79,6 +81,7 @@ export default defineConfig({
   //   include: ['virtual:vue-inspector-path:load.js'],
   // },
   server: {
+    
     port: 5173, // 端口号
     host: '0.0.0.0', // 监听所有网络接口
     allowedHosts: ['localhost'], // 允许的主机名
@@ -109,5 +112,8 @@ export default defineConfig({
     // watch: {
       
     // }
+  },
+  experimental: {
+    // bundledDev: true,
   }
 })

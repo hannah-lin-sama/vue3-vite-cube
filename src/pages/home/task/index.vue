@@ -3,7 +3,7 @@
 </template>
 <script lang="ts" setup>
 defineOptions({
-  name: 'TaskIndexView',
+  name: 'TaskIndexView'
 })
 </script>
 <route lang="yaml">

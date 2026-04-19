@@ -6,10 +6,10 @@ definePage({
   redirect: '/home',
   name: 'layout',
   meta: {
-    title: 'Home',
-  },
+    title: 'Home'
+  }
 })
 defineOptions({
-  name: 'IndexView',
+  name: 'IndexView'
 })
 </script>

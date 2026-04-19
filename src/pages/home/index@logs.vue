@@ -8,7 +8,7 @@
 import { onMounted } from 'vue'
 
 defineOptions({
-  name: 'IndexLogsView',
+  name: 'IndexLogsView'
 })
 onMounted(() => {
   console.log('IndexLogsView mounted')

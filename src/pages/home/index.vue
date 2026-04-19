@@ -2,6 +2,8 @@
   <div>
     <p>Home Index</p>
     <p @click="handleClick">Home Index</p>
+    <p>Home Index</p>
+    平层层
   </div>
 </template>
 <script lang="ts" setup>
@@ -12,11 +14,11 @@ const handleClick = () => {
 }
 
 defineOptions({
-  name: 'HomeIndexView',
+  name: 'HomeIndexView'
 })
 </script>
-<style scoped>
+<style scoped lang="less">
 p {
-  color: blanchedalmond;
+  color: @primary-color;
 }
 </style>

@@ -1,11 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { experimental_createRouter } from 'vue-router/experimental'
+import { createWebHistory } from 'vue-router'
 // 自动生成的路由（vite 插件注入）
-import { routes, handleHotUpdate } from 'vue-router/auto-routes'
+import { resolver } from 'vue-router/auto-resolver'
 
-console.log('routes', routes)
-const router = createRouter({
+// console.log('routes', routes)
+const router = experimental_createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
+  resolver
 })
 
 router.afterEach((to, from) => {

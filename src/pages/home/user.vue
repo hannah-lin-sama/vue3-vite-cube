@@ -3,7 +3,7 @@
 </template>
 <script lang="ts" setup>
 defineOptions({
-  name: 'UserIndexView',
+  name: 'UserIndexView'
 })
 </script>
 <route lang="yaml">

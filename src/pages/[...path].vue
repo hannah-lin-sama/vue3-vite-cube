@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 defineOptions({
-  name: 'NotFoundView',
+  name: 'NotFoundView'
 })
 </script>
 

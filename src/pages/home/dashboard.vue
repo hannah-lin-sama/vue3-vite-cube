@@ -6,6 +6,6 @@
 </template>
 <script lang="ts" setup>
 defineOptions({
-  name: 'HomeDashboardView',
+  name: 'HomeDashboardView'
 })
 </script>

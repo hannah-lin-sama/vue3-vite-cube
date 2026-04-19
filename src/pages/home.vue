@@ -81,13 +81,13 @@ import { ref } from 'vue'
 definePage({
   name: 'home',
   meta: {
-    title: 'Home',
-  },
+    title: 'Home'
+  }
 })
 
 // 定义组件名称
 defineOptions({
-  name: 'HomeView',
+  name: 'HomeView'
 })
 
 // 语言切换

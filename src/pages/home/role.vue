@@ -3,7 +3,7 @@
 </template>
 <script lang="ts" setup>
 defineOptions({
-  name: 'RoleView',
+  name: 'RoleView'
 })
 </script>
 <route lang="yaml">
