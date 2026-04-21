@@ -1,0 +1,2 @@
+/* See licenses of bundled dependencies at https://example.com/license.md */
+import{A as e,P as t,d as n,v as r}from"./runtime-core.esm-bundler-38NPEuRs.js";import{t as i}from"./route-block-BvMTcrJg.js";var a=r({name:`TaskIndexView`,__name:`index`,setup(r){return(r,i)=>{let a=t(`router-view`);return e(),n(a)}}});typeof i==`function`&&i(a);var o=a;export{o as default};

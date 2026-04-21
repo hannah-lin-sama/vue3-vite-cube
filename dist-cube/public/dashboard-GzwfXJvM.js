@@ -1,0 +1,2 @@
+/* See licenses of bundled dependencies at https://example.com/license.md */
+import{A as e,p as t,v as n}from"./runtime-core.esm-bundler-38NPEuRs.js";var r=n({name:`HomeDashboardIndexView`,__name:`index`,setup(n){return(n,r)=>(e(),t(`div`))}});export{r as default};

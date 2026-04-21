@@ -1,0 +1,2 @@
+/* See licenses of bundled dependencies at https://example.com/license.md */
+import{A as e,P as t,_ as n,p as r,v as i}from"./runtime-core.esm-bundler-38NPEuRs.js";var a=i({name:`HomeDashboardView`,__name:`dashboard`,setup(i){return(i,a)=>{let o=t(`router-view`);return e(),r(`div`,null,[n(o),n(o,{name:`logs`})])}}});export{a as default};

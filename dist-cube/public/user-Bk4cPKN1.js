@@ -1,0 +1,2 @@
+/* See licenses of bundled dependencies at https://example.com/license.md */
+import{A as e,P as t,d as n,v as r}from"./runtime-core.esm-bundler-38NPEuRs.js";var i=r({name:`CloudUserView`,__name:`user`,setup(r){return(r,i)=>{let a=t(`router-view`);return e(),n(a)}}});export{i as default};
