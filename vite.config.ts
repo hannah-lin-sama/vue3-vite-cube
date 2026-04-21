@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 // import vueDevTools from 'vite-plugin-vue-devtools'
 import VueRouter from 'vue-router/vite'
+import ElementPlus from 'unplugin-element-plus/vite'
 
 
 // https://vite.dev/config/
@@ -11,8 +12,9 @@ export default defineConfig({
   plugins: [
     // 必须要在 vue 插件之前
     VueRouter({
+      exclude: ['**/components/**'], // 排除 components 目录下的所有文件
       routesFolder: 'src/pages', // 默认 pages
-      extensions: ['.vue'], // 匹配文件后缀
+      extensions: ['.vue', '.tsx'], // 匹配文件后缀
       dts: 'src/typed-router.d.ts', // 生成类型文件
       // 出现 RangeError: Maximum call stack size exceeded
       // getRouteName: (route) => {
@@ -40,8 +42,11 @@ export default defineConfig({
     vue({
       
     }),
-    vueJsx(),
+    vueJsx({
+      
+    }),
     // vueDevTools(),
+    ElementPlus({}),
   ],
   resolve: {
     // alias: {

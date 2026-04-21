@@ -1,11 +1,15 @@
 <template>
   <div>
-    <p>角色管理</p>
-    <h3>角色列表</h3>
-    <div>cdfdfdd</div>
+    <input type="text" v-model="roleName" placeholder="请输入角色名称" /><br />
+    <input type="text" v-model="roleID" placeholder="请输入角色ID" />
   </div>
 </template>
 <script lang="ts" setup>
+import { ref } from 'vue'
+
+const roleName = ref('')
+const roleID = ref('')
+
 definePage({
   name: 'role',
   meta: {

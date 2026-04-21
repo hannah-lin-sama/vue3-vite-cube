@@ -39,23 +39,18 @@ declare module 'vue-router/auto-routes' {
       '/cloud',
       Record<never, never>,
       Record<never, never>,
-      '/cloud/' | '/cloud/components/tabOne' | '/cloud/components/tabTwo'
+      '/cloud/' | '/cloud/role/' | '/cloud/user' | '/cloud/user/'
     >
     '/cloud/': RouteRecordInfo<'/cloud/', '/cloud', Record<never, never>, Record<never, never>, never>
-    '/cloud/components/tabOne': RouteRecordInfo<
-      '/cloud/components/tabOne',
-      '/cloud/components/tabOne',
+    '/cloud/role/': RouteRecordInfo<'/cloud/role/', '/cloud/role', Record<never, never>, Record<never, never>, never>
+    '/cloud/user': RouteRecordInfo<
+      '/cloud/user',
+      '/cloud/user',
       Record<never, never>,
       Record<never, never>,
-      never
+      '/cloud/user/'
     >
-    '/cloud/components/tabTwo': RouteRecordInfo<
-      '/cloud/components/tabTwo',
-      '/cloud/components/tabTwo',
-      Record<never, never>,
-      Record<never, never>,
-      never
-    >
+    '/cloud/user/': RouteRecordInfo<'/cloud/user/', '/cloud/user', Record<never, never>, Record<never, never>, never>
     home: RouteRecordInfo<
       'home',
       '/home',
@@ -131,19 +126,23 @@ declare module 'vue-router/auto-routes' {
       views: never
     }
     'src/pages/cloud.vue': {
-      routes: '/cloud' | '/cloud/' | '/cloud/components/tabOne' | '/cloud/components/tabTwo'
+      routes: '/cloud' | '/cloud/' | '/cloud/role/' | '/cloud/user' | '/cloud/user/'
       views: 'default'
     }
     'src/pages/cloud/index.vue': {
       routes: '/cloud/'
       views: never
     }
-    'src/pages/cloud/components/tabOne.vue': {
-      routes: '/cloud/components/tabOne'
+    'src/pages/cloud/role/index.vue': {
+      routes: '/cloud/role/'
       views: never
     }
-    'src/pages/cloud/components/tabTwo.vue': {
-      routes: '/cloud/components/tabTwo'
+    'src/pages/cloud/user.vue': {
+      routes: '/cloud/user' | '/cloud/user/'
+      views: 'default'
+    }
+    'src/pages/cloud/user/index.tsx': {
+      routes: '/cloud/user/'
       views: never
     }
     'src/pages/home.vue': {

@@ -1,5 +1,5 @@
 <template>
-  <router-view />
+  <div>dd</div>
 </template>
 <script setup lang="ts">
 defineOptions({
