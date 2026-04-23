@@ -1,19 +1,14 @@
 <template>
   <div>
-    <p>这里是 tabTwo 标题</p>
-    <template v-for="(_, name) in slots" :key="name">
-      <slot :name="name" :data="info"></slot>
-    </template>
+    <input type="text" name="age" v-model="age" />
+    <input type="text" name="dec" v-model="dec" />
   </div>
 </template>
 <script setup lang="ts">
-import { useSlots } from "vue";
-
-defineProps<{
-  info: {
-    buttonName: string;
-  };
-}>();
-
-const slots = useSlots();
+const age = defineModel<number>("age", {
+  default: 20,
+});
+const dec = defineModel<string>("dec", {
+  required: true,
+});
 </script>
