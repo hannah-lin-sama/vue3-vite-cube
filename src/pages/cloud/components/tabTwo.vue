@@ -1,4 +1,10 @@
 <template>
-  <p>这里是 tabTwo 组件</p>
+  <div class="wrapper">
+    <input name="age" placeholder="请输入" data-test="field" />
+  </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineOptions({
+  inheritAttrs: false,
+});
+</script>
