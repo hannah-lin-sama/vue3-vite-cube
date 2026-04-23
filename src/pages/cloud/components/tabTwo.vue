@@ -1,34 +1,29 @@
 <template>
   <div>
-    <input type="text" name="age" v-model.number="age" />
-    <input type="text" name="dec" v-model="dec" />
+    <p>age: {{ age }}</p>
+    <p>dec: {{ dec }}</p>
   </div>
 </template>
 <script setup lang="ts">
-const age = defineModel<number>("age", {
-  default: 20,
-});
-const [dec, modifierDec] = defineModel<string, string>("dec", {
-  required: true,
-  get(value: string): string {
-    console.log(value, "get-xxx", modifierDec);
-    return modifierDec?.upper ? value.toUpperCase() : value;
-  },
-  set(value: string) {
-    console.log(value, "xxx");
+import { onMounted } from "vue";
 
-    return modifierDec?.upper ? value.toUpperCase() : value;
-  },
+interface Props {
+  age: number;
+  dec?: string;
+}
+const props = withDefaults(defineProps<Props>(), {
+  dec: "des",
+  age: () => 18,
 });
 
-console.log(dec, "xxx", modifierDec);
-
-const reset = () => {
-  age.value = 20;
-  dec.value = "DESC";
-};
-
-defineExpose({
-  reset,
+onMounted(() => {
+  console.log(props);
+  emit("change", { type: "测试" });
+  emit("send", { age: 18 });
 });
+
+const emit = defineEmits<
+  ((e: "change", data: { type: string }) => void) &
+    ((e: "send", data: { age: number }) => void)
+>();
 </script>
