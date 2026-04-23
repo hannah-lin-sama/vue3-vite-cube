@@ -1,13 +1,31 @@
 <template>
   <p>{{ "这里是云平台首页" }}</p>
-  <input v-foucs name="age" type="text" placeholder="please input" />
+  <tabTwo :info="info">
+    <template #default>
+      <p>这里是 插槽 default 部分</p>
+    </template>
+    <template #body>
+      <p>这里是 插槽 body 部分</p>
+    </template>
+    <template #footer="{ buttonName }">
+      <button>{{ buttonName }}</button>
+    </template>
+  </tabTwo>
 </template>
 <script setup lang="ts">
-import vFoucs from "@/directives/vFoucs";
+import tabTwo from "@/pages/cloud/components/tabTwo.vue";
+import { reactive } from "vue";
+
+const info = reactive({
+  buttonName: "提交",
+});
 defineOptions({
   name: "CloudIndexView",
-  directives: {
-    vFoucs,
-  },
 });
+
+defineSlots<{
+  default(): void;
+  body(): void;
+  footer(buttonName: string): void;
+}>();
 </script>

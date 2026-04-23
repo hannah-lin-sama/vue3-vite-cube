@@ -38,9 +38,15 @@ export default defineConfig({
       // experimental: {
        
       // },
-    }),
+    }),   
     vue({
-      
+      template: {
+        compilerOptions: {
+          // prefixIdentifiers: true,
+          hoistStatic: true,   // 强制开启（开发模式也会生效）
+          cacheHandlers: true, // 缓存事件处理函数
+        },
+      }
     }),
     vueJsx({
       
