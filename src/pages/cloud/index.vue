@@ -7,8 +7,8 @@
     <template #body>
       <p>这里是 插槽 body 部分</p>
     </template>
-    <template #footer="{ buttonName }">
-      <button>{{ buttonName }}</button>
+    <template #footer="{ data }">
+      <button>{{ data.buttonName }}</button>
     </template>
   </tabTwo>
 </template>
@@ -26,6 +26,6 @@ defineOptions({
 defineSlots<{
   default(): void;
   body(): void;
-  footer(buttonName: string): void;
+  footer(data: { buttonName: string }): void;
 }>();
 </script>
