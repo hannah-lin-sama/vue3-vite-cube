@@ -12,11 +12,6 @@ interface Props {
   dec?: string;
 }
 
-const res = await new Promise((resolve) => {
-  resolve({ age: 18 });
-});
-
-console.log(res);
 const props = withDefaults(defineProps<Props>(), {
   dec: "des",
   age: () => 18,

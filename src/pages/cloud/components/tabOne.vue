@@ -1,23 +1,20 @@
 <template>
   <div>
-    <input v-model.trim="tabName" />
-    <input v-model.number="tabId" />
+    <p>这里是tabOne 。。。。{{ tabName }}</p>
   </div>
 </template>
 <script setup lang="ts">
-const [tabName, tabNameModifiers] = defineModel('tabName', {
-  set(val: string) {
-    return tabNameModifiers.upper ? val.toUpperCase() : val.toLowerCase()
-  }
-})
-const [tabId, tabIdModifiers] = defineModel('tabId', {
-  set(val: number) {
-    const len = val.toString().length
-    return tabIdModifiers.max ? (len <= 10 ? val : Number(val.toString().slice(0, 10))) : val
-  }
-})
+import { ref } from "vue";
+
+const tabName = ref("本tabOne");
+const promise: { message: string } = await new Promise((resolve) => {
+  resolve({ message: "测试await" });
+});
+tabName.value = promise.message;
+
+console.log(tabName.value);
 
 defineOptions({
-  name: 'TabOneView'
-})
+  name: "TabOneView",
+});
 </script>
