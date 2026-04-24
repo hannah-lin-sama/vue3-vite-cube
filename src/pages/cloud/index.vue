@@ -1,6 +1,8 @@
 <template>
   <p>{{ "这里是云平台首页" }}</p>
-  <tabTwo :age="age" :dec="dec" @change="changeAge" @send="changeAge"> </tabTwo>
+  <Suspense>
+    <tabTwo :age="age" :dec="dec" @change="changeAge" @send="changeAge"> </tabTwo>
+  </Suspense>
 </template>
 <script setup lang="ts">
 import tabTwo from "@/pages/cloud/components/tabTwo.vue";
