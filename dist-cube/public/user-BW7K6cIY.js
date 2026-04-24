@@ -1,2 +1,0 @@
-/* See licenses of bundled dependencies at https://example.com/license.md */
-import{_ as e,g as t,v as n}from"./runtime-core.esm-bundler-38NPEuRs.js";var r=n({name:`CloudUserIndexView`,setup(n,r){return()=>e(`div`,null,[e(`button`,null,[t(`按钮`)]),e(`p`,null,[t(`用户管理`)])])}});export{r as default};

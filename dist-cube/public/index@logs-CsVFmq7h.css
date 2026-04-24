@@ -1,0 +1,52 @@
+.flex-center[data-v-78ccbb18] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between[data-v-78ccbb18] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@keyframes fadeIn-78ccbb18 {
+from {
+    opacity: 0;
+    transform: translateY(10px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+@keyframes slideIn-78ccbb18 {
+from {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+@keyframes spin-78ccbb18 {
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(360deg);
+}
+}
+@keyframes bounce-78ccbb18 {
+from {
+    transform: translateY(0);
+}
+to {
+    transform: translateY(-10px);
+}
+}
+.title[data-v-78ccbb18] {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}

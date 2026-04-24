@@ -1,2 +1,0 @@
-/* See licenses of bundled dependencies at https://example.com/license.md */
-import{A as e,g as t,p as n,u as r,v as i}from"./runtime-core.esm-bundler-38NPEuRs.js";import{u as a}from"./index-C6WPuYTM.js";var o=a(i({name:`HomeIndexView`,__name:`index`,setup(i){let a=()=>{console.log(`click`)};return(i,o)=>(e(),n(`div`,null,[o[0]||=r(`p`,null,`Home Index`,-1),r(`p`,{onClick:a},`Home Index`),o[1]||=r(`p`,null,`Home Index`,-1),o[2]||=t(` 平层层 `,-1)]))}}),[[`__scopeId`,`data-v-379d8551`]]);export{o as default};
