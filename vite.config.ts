@@ -1,5 +1,5 @@
 // import { fileURLToPath, URL } from 'node:url'
-import { defineConfig } from 'vite'
+import { defineConfig, minify } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 // import vueDevTools from 'vite-plugin-vue-devtools'
@@ -74,9 +74,12 @@ export default defineConfig({
   build: {
     outDir: 'dist-cube',
     assetsDir: 'public',
-    minify: 'oxc', // oxc false terser esbuild
+    // minify: 'oxc', // oxc false terser esbuild
+    minify: false, // 关闭压缩
+    // minify: true, // 开启压缩
     manifest: true, // 生成 manifest.json 文件
     license: true, // 生成 license.md 文件
+    sourcemap: true, // 生成 sourcemap 文件
     rolldownOptions: {
       output: {
         postBanner:
