@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref, computed, toRaw, reactive } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useCounterStore = defineStore('counter', () => {
@@ -8,5 +8,21 @@ export const useCounterStore = defineStore('counter', () => {
     count.value++
   }
 
+  const project = reactive({
+    id: 'xx',
+    desc: '项目描述'
+  })
+
+  const projects = ref({
+    id: 'xx',
+    desc: '项目描述'
+  })
+
+  console.log('projects',projects,)
+  console.log('projects.value',projects.value)
+  console.log('toRaw projects.value', toRaw(projects.value))
   return { count, doubleCount, increment }
 })
+
+
+console.log('useCounterStore',useCounterStore())

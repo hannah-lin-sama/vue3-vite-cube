@@ -9,7 +9,7 @@
     </el-container>
 
     <el-container>
-      <el-aside>
+      <el-aside width="160px">
         <el-menu
           :default-active="activeMenu"
           class="sidebar-menu"
