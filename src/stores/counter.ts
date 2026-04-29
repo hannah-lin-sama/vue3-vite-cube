@@ -18,11 +18,10 @@ export const useCounterStore = defineStore('counter', () => {
     desc: '项目描述'
   })
 
-  console.log('projects',projects,)
-  console.log('projects.value',projects.value)
+  console.log('projects', projects)
+  console.log('projects.value', projects.value)
   console.log('toRaw projects.value', toRaw(projects.value))
   return { count, doubleCount, increment }
 })
 
-
-console.log('useCounterStore',useCounterStore())
+console.log('useCounterStore', useCounterStore())

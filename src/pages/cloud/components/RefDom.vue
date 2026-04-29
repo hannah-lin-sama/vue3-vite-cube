@@ -4,11 +4,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { onMounted, useTemplateRef } from "vue";
+import { onMounted, useTemplateRef } from 'vue'
 
-const pDom = useTemplateRef<HTMLParagraphElement | null>("pDom");
+const pDom = useTemplateRef<HTMLParagraphElement | null>('pDom')
 
 onMounted(() => {
-  console.log(pDom.value);
-});
+  console.log(pDom.value)
+})
 </script>

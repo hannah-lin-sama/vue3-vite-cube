@@ -11,6 +11,6 @@
 
 // const color = ref("#f5f5f5");
 defineOptions({
-  name: "StyleAView",
-});
+  name: 'StyleAView'
+})
 </script>

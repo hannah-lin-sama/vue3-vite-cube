@@ -6,24 +6,24 @@
 </template>
 <script setup lang="ts">
 // import { fi } from "element-plus/es/locale/index.mjs";
-import { computed, ref, watch, watchEffect } from "vue";
-const count = ref(0);
+import { computed, ref, watch, watchEffect } from 'vue'
+const count = ref(0)
 
-const domRef = ref<HTMLParagraphElement>();
+const domRef = ref<HTMLParagraphElement>()
 const sub = computed(() => {
   // count.value++; // 副作用！
 
-  return Math.random();
+  return Math.random()
   // return count.value;
-});
+})
 
 const handleClick = () => {
   // count.value++;
-  console.log("handleClick 值", sub.value);
-};
+  console.log('handleClick 值', sub.value)
+}
 
-const firstName = ref<string>("");
-const lastName = ref<string>("");
+const firstName = ref<string>('')
+const lastName = ref<string>('')
 
 // const fullName = computed({
 //   get() {
@@ -51,6 +51,6 @@ const lastName = ref<string>("");
 // );
 
 watchEffect(() => {
-  console.log("watchEffect 值", firstName.value, lastName.value);
-});
+  console.log('watchEffect 值', firstName.value, lastName.value)
+})
 </script>

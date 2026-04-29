@@ -20,18 +20,18 @@
 // import ComputeA from "@/pages/cloud/components/ComputeA.vue";
 // import RefDom from "@/pages/cloud/components/RefDom.vue";
 // import ReactiveA from "@/pages/cloud/components/ReactiveA.vue";
-import RefA from "@/pages/cloud/components/RefA.vue";
+import RefA from '@/pages/cloud/components/RefA.vue'
 // import EffectA from "@/pages/cloud/components/EffectA.vue";
 // import EffectB from "@/pages/cloud/components/EffectB.vue";
 
-import { onMounted, ref, type ComponentPublicInstance } from "vue";
+import { onMounted, ref, type ComponentPublicInstance } from 'vue'
 
-const comRef = ref<ComponentPublicInstance | null>(null);
+const comRef = ref<ComponentPublicInstance | null>(null)
 
 onMounted(() => {
-  console.log("component ref", comRef.value?.$refs.pDom);
-});
+  console.log('component ref', comRef.value?.$refs.pDom)
+})
 defineOptions({
-  name: "CloudIndexView",
-});
+  name: 'CloudIndexView'
+})
 </script>

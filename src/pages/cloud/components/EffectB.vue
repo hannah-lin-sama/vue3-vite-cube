@@ -3,15 +3,15 @@
 </template>
 
 <script lang="ts" setup>
-import { effect, reactive } from "vue";
+import { effect, reactive } from 'vue'
 
 const obj = reactive({
   count: 0,
-  name: "effectB",
-  age: 20,
-});
+  name: 'effectB',
+  age: 20
+})
 
 effect(() => {
-  console.log("effectB 值", obj.count, obj.name, obj.age);
-});
+  console.log('effectB 值', obj.count, obj.name, obj.age)
+})
 </script>

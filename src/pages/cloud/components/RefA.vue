@@ -13,10 +13,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref, watch, computed, onUpdated, reactive } from "vue";
+import { ref, watch, computed, onUpdated, reactive } from 'vue'
 
-const count = ref(0);
-const firstCount = ref(0);
+const count = ref(0)
+const firstCount = ref(0)
 
 // const handleClick = () => {
 //   // 批量更新，update 一次
@@ -25,21 +25,21 @@ const firstCount = ref(0);
 // };
 
 watch(count, (newVal, oldVal) => {
-  console.log("watch count 值", newVal, oldVal);
-});
+  console.log('watch count 值', newVal, oldVal)
+})
 
 watch(firstCount, (newVal, oldVal) => {
-  console.log("watch firstCount 值", newVal, oldVal);
-});
+  console.log('watch firstCount 值', newVal, oldVal)
+})
 
 onUpdated(() => {
-  console.log("-----onUpdated ---");
-});
+  console.log('-----onUpdated ---')
+})
 
 const info = ref({
-  name: "张三",
-  age: 18,
-});
+  name: '张三',
+  age: 18
+})
 
 // const handleClick = () => {
 //   // 批量更新，update 一次
@@ -50,29 +50,29 @@ const info = ref({
 watch(
   info,
   (newVal, oldVal) => {
-    console.log("watch info 值", newVal, oldVal);
+    console.log('watch info 值', newVal, oldVal)
   },
   { deep: true }
-);
+)
 
 /** 响应式数组的更新 */
 
-const reactiveArr = reactive<string[]>(["item1", "item2", "item3"]);
+const reactiveArr = reactive<string[]>(['item1', 'item2', 'item3'])
 
 const reactiveCopyArr = reactive([
-  "item1",
+  'item1',
   {
-    list: ["child1", "child2"],
+    list: ['child1', 'child2']
   },
-  "item3",
-]);
+  'item3'
+])
 
 const sum = reactiveCopyArr.reduce((acc, item) => {
-  console.log("acc", acc);
-  console.log("item", item);
-  return typeof item === "string" ? { ...acc, [item]: item } : acc;
-}, {});
-console.log("sum", sum);
+  console.log('acc', acc)
+  console.log('item', item)
+  return typeof item === 'string' ? { ...acc, [item]: item } : acc
+}, {})
+console.log('sum', sum)
 
 const handleClick = () => {
   // 批量更新，update 一次
@@ -93,11 +93,11 @@ const handleClick = () => {
  */
   // const result = reactiveCopyArr.find((item) => typeof item === "object");
   // console.log("result", result);
-};
+}
 
 // reactive默认深度监听
 watch(reactiveArr, (newVal, oldVal) => {
   // 新旧值是同一个引用
-  console.log("watch reactiveArr 值", newVal, oldVal);
-});
+  console.log('watch reactiveArr 值', newVal, oldVal)
+})
 </script>

@@ -10,11 +10,7 @@
 
     <el-container>
       <el-aside width="160px">
-        <el-menu
-          :default-active="activeMenu"
-          class="sidebar-menu"
-          @select="handleMenuSelect"
-        >
+        <el-menu :default-active="activeMenu" class="sidebar-menu" @select="handleMenuSelect">
           <el-menu-item index="dashboard">
             <el-icon size="24px"><House /></el-icon>
             <span data-path="dashboard">仪表盘</span>
@@ -44,36 +40,28 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { House, Document, Grid, Setting } from "@element-plus/icons-vue";
-import {
-  ElContainer,
-  ElHeader,
-  ElAside,
-  ElMain,
-  ElMenu,
-  ElMenuItem,
-  ElIcon,
-} from "element-plus";
-import { useRouter } from "vue-router";
+import { ref, onMounted } from 'vue'
+import { House, Document, Grid, Setting } from '@element-plus/icons-vue'
+import { ElContainer, ElHeader, ElAside, ElMain, ElMenu, ElMenuItem, ElIcon } from 'element-plus'
+import { useRouter } from 'vue-router'
 
-const router = useRouter();
+const router = useRouter()
 
-const activeMenu = ref("dashboard");
+const activeMenu = ref('dashboard')
 
 const handleMenuSelect = (key: string) => {
-  console.log(key);
+  console.log(key)
 
-  router.push({ path: `/cloud/${key}` });
-};
+  router.push({ path: `/cloud/${key}` })
+}
 
 // 生命周期
 onMounted(() => {
   // 初始化数据
-  console.log("Cloud 页面加载完成");
-});
+  console.log('Cloud 页面加载完成')
+})
 
 defineOptions({
-  name: "CloudView",
-});
+  name: 'CloudView'
+})
 </script>
