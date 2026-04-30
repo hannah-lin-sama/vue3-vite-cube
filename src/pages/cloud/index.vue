@@ -7,12 +7,14 @@
     <!-- <ComputeA /> -->
     <!-- <RefDom ref="comRef" /> -->
     <!-- <ReactiveA /> -->
-    <RefA />
+    <!-- <RefA /> -->
     <!-- <StyleA>
       <template #default>
         <p>这里是StyleA 插槽</p>
       </template>
     </StyleA> -->
+
+    <InputCom />
   </div>
 </template>
 <script setup lang="ts">
@@ -20,9 +22,10 @@
 // import ComputeA from "@/pages/cloud/components/ComputeA.vue";
 // import RefDom from "@/pages/cloud/components/RefDom.vue";
 // import ReactiveA from "@/pages/cloud/components/ReactiveA.vue";
-import RefA from '@/pages/cloud/components/RefA.vue'
+// import RefA from '@/pages/cloud/components/RefA.vue'
 // import EffectA from "@/pages/cloud/components/EffectA.vue";
 // import EffectB from "@/pages/cloud/components/EffectB.vue";
+import InputCom from '@/pages/cloud/components/InputCom.vue'
 
 import { onMounted, ref, type ComponentPublicInstance } from 'vue'
 
