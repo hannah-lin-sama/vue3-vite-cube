@@ -1,20 +1,30 @@
 <template>
   <div>
-    <p>这里是tabOne 。。。。{{ tabName }}</p>
+    <h2>手动控制</h2>
+    <button @click="handleBtn">点击</button>
+    <button @click="handleClick">监听</button>
+    <button @click="handleStop">取消监听</button>
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
+import { effect, ref } from 'vue'
+const color = ref(0)
 
-const tabName = ref('本tabOne')
-const promise: { message: string } = await new Promise(resolve => {
-  resolve({ message: '测试await' })
+// 返回 runner 函数，用于手动触发监听
+const runner = effect(() => {
+  console.log('color 值', color.value)
 })
-tabName.value = promise.message
 
-console.log(tabName.value)
+const handleBtn = () => {
+  color.value++
+}
 
-defineOptions({
-  name: 'TabOneView'
-})
+// 手动执行不受依赖变化影响
+const handleClick = () => {
+  runner()
+}
+
+const handleStop = () => {
+  runner.effect.stop()
+}
 </script>

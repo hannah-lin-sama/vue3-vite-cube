@@ -1,121 +1,89 @@
 <template>
   <div>
     <h2>响应式对象</h2>
-    <p>count 值 {{ info.name }}</p>
+    <p>count 值</p>
     <button @click="handleClick">按钮1</button>
 
     <h2>响应式数组</h2>
-    <ul>
-      <li v-for="item in reactiveArr" :key="item">
-        {{ item }}
-      </li>
-    </ul>
+
+    <h2>响应式 Map 解构</h2>
+    <p>{{ shallowObj.info.list }}</p>
+
+    <p>
+      <button @click="handleClick2">按钮2</button>
+    </p>
   </div>
 </template>
 <script setup lang="ts">
-import { ref, watch, computed, onUpdated, reactive, effect } from "vue";
+import {
+  ref,
+  readonly,
+  watch,
+  reactive,
+  shallowReadonly,
+  shallowReactive,
+  effect,
+  toRef,
+  shallowRef,
+  triggerRef
+} from 'vue'
 
-const count = ref(0);
-const firstCount = ref(0);
-
+const shallowObj = shallowReactive({
+  count: 0,
+  name: 'shallowObj',
+  list: [1, 2, 3],
+  info: {
+    age: 20,
+    list: [4, 5, 6]
+  }
+})
 // const handleClick = () => {
-//   // 批量更新，update 一次
-//   count.value++;
-//   firstCount.value++;
+//   // 先访问 shallowObj.info，得到普通对象
+//   // 然后修改该普通对象的 list 属性，赋值为新数组
+//   // 由于 info 不是响应式代理，这个修改不会触发任何响应式更新。而且 list 也不是响应式数组
+//   shallowObj.info.list = [7, 8, 9];
 // };
 
-watch(count, (newVal, oldVal) => {
-  console.log("watch count 值", newVal, oldVal);
-});
+effect(() => {
+  console.log('shallowObj', shallowObj.info.list)
+})
 
-watch(firstCount, (newVal, oldVal) => {
-  console.log("watch firstCount 值", newVal, oldVal);
-});
-
-onUpdated(() => {
-  console.log("-----onUpdated ---");
-});
-
-const info = ref({
-  name: "张三",
-  age: 18,
-});
+const info = reactive(new Set(['a', 'b', 'c']))
 
 // const handleClick = () => {
-//   // 批量更新，update 一次
-//   info.value.name = "李四";
-//   info.value.age = 20;
+//   info.add("d");
+// };
+effect(() => {
+  console.log('info', info.has('a'))
+})
+
+// const datas = ref([3, 4, 5]);
+
+// effect(() => {
+//   console.log("datas", datas.value);
+// });
+
+// const handleClick = () => {
+//   // 获取 datas.value 不会收集依赖，因为没有正在执行的副作用
+//   datas.value.push(6);
 // };
 
-watch(
-  info,
-  (newVal, oldVal) => {
-    console.log("watch info 值", newVal, oldVal);
-  },
-  { deep: true }
-);
+const count = shallowRef(0)
 
-/** 响应式数组的更新 */
+effect(() => {
+  console.log('count', count.value)
+})
 
-const reactiveArr = reactive<string[]>(["item1", "item2", "item3"]);
+const objShallow = shallowRef({ a: 1 })
 
 const handleClick = () => {
-  // 非副作用函数，不会收集依赖
-  // const item1 = reactiveArr[0];
-  // const item2 = reactiveArr[1];
+  objShallow.value.a++
+}
 
-  runer();
-};
-
-const runer = effect(() => {
-  // 副作用函数，会收集依赖
-  console.log("effect 值", reactiveArr[0]);
-
-  reactiveArr.push("item4");
-});
-
-/**
- * 响应式数组的更新 复杂数据
- */
-const reactiveCopyArr = reactive([
-  "item1",
-  {
-    list: ["child1", "child2"],
-  },
-  "item3",
-]);
-
-const sum = reactiveCopyArr.reduce((acc, item) => {
-  console.log("acc", acc);
-  console.log("item", item);
-  return typeof item === "string" ? { ...acc, [item]: item } : acc;
-}, {});
-console.log("sum", sum);
-
-// const handleClick = () => {
-// 批量更新，update 一次
-// reactiveArr.push("item4");
-// reactiveArr.push("item5");
-// 更新
-// reactiveArr[0] = "索引修改item0";
-// 更新
-// reactiveArr.length = 0;
-/*   const result = reactiveCopyArr.values();
-  console.log("result", result);
-
-  let res;
-  do {
-    res = result._next();
-    console.log(res);
-  } while (!res.done);
- */
-// const result = reactiveCopyArr.find((item) => typeof item === "object");
-// console.log("result", result);
-// };
-
-// reactive默认深度监听
-watch(reactiveArr, (newVal, oldVal) => {
-  // 新旧值是同一个引用
-  console.log("watch reactiveArr 值", newVal, oldVal);
-});
+const handleClick2 = () => {
+  triggerRef(objShallow)
+}
+effect(() => {
+  console.log('effect副作用', objShallow.value.a)
+})
 </script>

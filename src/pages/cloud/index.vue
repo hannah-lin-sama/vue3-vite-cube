@@ -1,7 +1,7 @@
 <template>
   <div class="cloud-index">
     <p class="title">这里是云平台首页新</p>
-    <!-- <p class="title">这里是云平台首页新</p>
+    <!-- <p class="title">这里是云平台首页新</p> -->
     <!-- <EffectA /> -->
     <!-- <EffectB /> -->
     <!-- <ComputeA /> -->
@@ -14,7 +14,11 @@
       </template>
     </StyleA> -->
 
-    <InputCom />
+    <!-- <InputCom /> -->
+    <!-- <ComputedA /> -->
+    <!-- <tabOne /> -->
+    <!-- <BatchA /> -->
+    <ShowA />
   </div>
 </template>
 <script setup lang="ts">
@@ -25,15 +29,20 @@
 // import RefA from '@/pages/cloud/components/RefA.vue'
 // import EffectA from "@/pages/cloud/components/EffectA.vue";
 // import EffectB from "@/pages/cloud/components/EffectB.vue";
-import InputCom from '@/pages/cloud/components/InputCom.vue'
+// import InputCom from '@/pages/cloud/components/InputCom.vue'
+// import ComputedA from '@/pages/cloud/components/ComputedA.vue'
+// import tabOne from "@/pages/cloud/components/tabOne.vue";
 
-import { onMounted, ref, type ComponentPublicInstance } from 'vue'
+// import BatchA from "@/pages/cloud/components/BatchA.vue";
+import ShowA from '@/pages/cloud/components/ShowA.vue'
 
-const comRef = ref<ComponentPublicInstance | null>(null)
+// import { onMounted, ref, type ComponentPublicInstance } from 'vue'
 
-onMounted(() => {
-  console.log('component ref', comRef.value?.$refs.pDom)
-})
+// const comRef = ref<ComponentPublicInstance | null>(null)
+
+// onMounted(() => {
+//   console.log('component ref', comRef.value?.$refs.pDom)
+// })
 defineOptions({
   name: 'CloudIndexView'
 })
