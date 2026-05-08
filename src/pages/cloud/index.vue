@@ -18,7 +18,8 @@
     <!-- <ComputedA /> -->
     <!-- <tabOne /> -->
     <!-- <BatchA /> -->
-    <ShowA />
+    <!-- <ShowA /> -->
+    <CacheA />
   </div>
 </template>
 <script setup lang="ts">
@@ -34,7 +35,9 @@
 // import tabOne from "@/pages/cloud/components/tabOne.vue";
 
 // import BatchA from "@/pages/cloud/components/BatchA.vue";
-import ShowA from '@/pages/cloud/components/ShowA.vue'
+// import ShowA from '@/pages/cloud/components/ShowA.vue'
+
+import CacheA from '@/pages/cloud/components/CacheA.vue'
 
 // import { onMounted, ref, type ComponentPublicInstance } from 'vue'
 

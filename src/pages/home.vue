@@ -1,12 +1,9 @@
 <template>
   <div class="layout">
-    <!-- 侧边栏 -->
     <div class="aside">
-      <!-- 品牌/logo -->
       <div class="brand">
         <h2>Vue Cube</h2>
       </div>
-      <!-- 导航菜单 -->
       <nav class="nav-menu">
         <ul>
           <li>
@@ -42,22 +39,20 @@
         </ul>
       </nav>
     </div>
-    <!-- 主内容区域 -->
+
     <div class="main">
-      <!-- 顶部导航栏 -->
       <header class="top-nav">
         <div class="top-nav-left">
           <h1>管理控制台</h1>
         </div>
         <div class="top-nav-right">
-          <!-- 语言选择 -->
           <div class="language-selector">
             <button class="language-btn">
               {{ currentLanguage === 'zh' ? '中文' : 'English' }}
               <span class="dropdown-icon">▼</span>
             </button>
           </div>
-          <!-- 用户信息 -->
+
           <div class="user-info">
             <span class="user-name">用户名称</span>
             <div class="user-avatar">
@@ -66,7 +61,7 @@
           </div>
         </div>
       </header>
-      <!-- 内容区域 -->
+
       <main class="content">
         <RouterView />
         <RouterView name="logs" />

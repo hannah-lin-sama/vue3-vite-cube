@@ -27,6 +27,14 @@
             <el-icon><Setting /></el-icon>
             <span data-path="settings">系统设置</span>
           </el-menu-item>
+          <el-menu-item index="bugs">
+            <el-icon><Setting /></el-icon>
+            <span data-path="bugs">问题管理</span>
+          </el-menu-item>
+          <el-menu-item index="graph">
+            <el-icon><Setting /></el-icon>
+            <span data-path="graph">图管理</span>
+          </el-menu-item>
         </el-menu>
       </el-aside>
 

@@ -40,13 +40,12 @@ export default defineConfig({
       // },
     }),   
     vue({
-      template: {
+      template: { 
         compilerOptions: {
-          // prefixIdentifiers: true,
           hoistStatic: true,   // 强制开启（开发模式也会生效）
           cacheHandlers: true, // 缓存事件处理函数
-        },
       }
+    }
     }),
     vueJsx({
       
@@ -60,6 +59,7 @@ export default defineConfig({
     // },
     alias: {
       '@': '/src',
+      'vue-run': 'vue/dist/vue.esm-bundler.js',
     },
     // tsconfigPaths: true,  // 自动读取 tsconfig paths
   },
