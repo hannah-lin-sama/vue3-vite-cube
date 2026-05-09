@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div key="SuspenceA--0">
     <Suspense timeout="10" @fallback="handleFallback" @pending="handlePending" @resolve="handleResolve">
       <AsyncComponent />
     </Suspense>
