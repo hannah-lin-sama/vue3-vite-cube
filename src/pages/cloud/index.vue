@@ -37,7 +37,7 @@
 // import BatchA from "@/pages/cloud/components/BatchA.vue";
 // import ShowA from '@/pages/cloud/components/ShowA.vue'
 
-import CacheA from '@/pages/cloud/components/CacheA.vue'
+// import CacheA from '@/pages/cloud/components/CacheA.vue'
 
 // import { onMounted, ref, type ComponentPublicInstance } from 'vue'
 
