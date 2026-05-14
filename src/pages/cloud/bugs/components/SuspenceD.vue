@@ -2,7 +2,7 @@
   <div key="div--0">
     <Suspense
       timeout="10"
-      key="Suspense--0"
+      key="SuspenseD--0"
       @fallback="handleFallback"
       @pending="handlePending"
       @resolve="handleResolve"

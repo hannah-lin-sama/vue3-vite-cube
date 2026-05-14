@@ -39,9 +39,25 @@ declare module 'vue-router/auto-routes' {
       '/cloud',
       Record<never, never>,
       Record<never, never>,
-      '/cloud/' | '/cloud/role/' | '/cloud/user' | '/cloud/user/'
+      | '/cloud/'
+      | '/cloud/bugs/'
+      | '/cloud/bugs/indexKeep'
+      | '/cloud/graph/'
+      | '/cloud/role/'
+      | '/cloud/user'
+      | '/cloud/user/'
+      | '/cloud/vueKnown/'
     >
     '/cloud/': RouteRecordInfo<'/cloud/', '/cloud', Record<never, never>, Record<never, never>, never>
+    '/cloud/bugs/': RouteRecordInfo<'/cloud/bugs/', '/cloud/bugs', Record<never, never>, Record<never, never>, never>
+    '/cloud/bugs/indexKeep': RouteRecordInfo<
+      '/cloud/bugs/indexKeep',
+      '/cloud/bugs/indexKeep',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >
+    '/cloud/graph/': RouteRecordInfo<'/cloud/graph/', '/cloud/graph', Record<never, never>, Record<never, never>, never>
     '/cloud/role/': RouteRecordInfo<'/cloud/role/', '/cloud/role', Record<never, never>, Record<never, never>, never>
     '/cloud/user': RouteRecordInfo<
       '/cloud/user',
@@ -51,6 +67,13 @@ declare module 'vue-router/auto-routes' {
       '/cloud/user/'
     >
     '/cloud/user/': RouteRecordInfo<'/cloud/user/', '/cloud/user', Record<never, never>, Record<never, never>, never>
+    '/cloud/vueKnown/': RouteRecordInfo<
+      '/cloud/vueKnown/',
+      '/cloud/vueKnown',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >
     home: RouteRecordInfo<
       'home',
       '/home',
@@ -126,11 +149,32 @@ declare module 'vue-router/auto-routes' {
       views: never
     }
     'src/pages/cloud.vue': {
-      routes: '/cloud' | '/cloud/' | '/cloud/role/' | '/cloud/user' | '/cloud/user/'
+      routes:
+        | '/cloud'
+        | '/cloud/'
+        | '/cloud/bugs/'
+        | '/cloud/bugs/indexKeep'
+        | '/cloud/graph/'
+        | '/cloud/role/'
+        | '/cloud/user'
+        | '/cloud/user/'
+        | '/cloud/vueKnown/'
       views: 'default'
     }
     'src/pages/cloud/index.vue': {
       routes: '/cloud/'
+      views: never
+    }
+    'src/pages/cloud/bugs/index.vue': {
+      routes: '/cloud/bugs/'
+      views: never
+    }
+    'src/pages/cloud/bugs/indexKeep.vue': {
+      routes: '/cloud/bugs/indexKeep'
+      views: never
+    }
+    'src/pages/cloud/graph/index.vue': {
+      routes: '/cloud/graph/'
       views: never
     }
     'src/pages/cloud/role/index.vue': {
@@ -143,6 +187,10 @@ declare module 'vue-router/auto-routes' {
     }
     'src/pages/cloud/user/index.tsx': {
       routes: '/cloud/user/'
+      views: never
+    }
+    'src/pages/cloud/vueKnown/index.vue': {
+      routes: '/cloud/vueKnown/'
       views: never
     }
     'src/pages/home.vue': {

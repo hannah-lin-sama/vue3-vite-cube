@@ -1,4 +1,4 @@
-import type { Directive } from "vue";
+import type { Directive } from 'vue'
 
 // const vFoucs: Directive = {
 //   created(el: HTMLInputElement, binding, vnode, args) {
@@ -15,8 +15,8 @@ import type { Directive } from "vue";
 //   },
 // };
 
-const vFocus: Directive = (el: HTMLInputElement) => { 
+const vFocus: Directive = (el: HTMLInputElement) => {
   el.focus()
 }
 
-export default vFocus;
+export default vFocus
