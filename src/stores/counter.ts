@@ -8,20 +8,9 @@ export const useCounterStore = defineStore('counter', () => {
     count.value++
   }
 
-  const project = reactive({
-    id: 'xx',
-    desc: '项目描述'
-  })
+  function decrement() {
+    count.value--
+  }
 
-  const projects = ref({
-    id: 'xx',
-    desc: '项目描述'
-  })
-
-  console.log('projects', projects)
-  console.log('projects.value', projects.value)
-  console.log('toRaw projects.value', toRaw(projects.value))
-  return { count, doubleCount, increment }
+  return { count, doubleCount, increment, decrement }
 })
-
-console.log('useCounterStore', useCounterStore())
