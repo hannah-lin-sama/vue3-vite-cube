@@ -1,0 +1,120 @@
+
+.not-found-container[data-v-5b349f6a] {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+.not-found-content[data-v-5b349f6a] {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 540px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.error-code[data-v-5b349f6a] {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.digit[data-v-5b349f6a] {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0 10px;
+  color: #667eea;
+  animation: bounce-5b349f6a 1s infinite alternate;
+}
+.digit[data-v-5b349f6a]:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.digit[data-v-5b349f6a]:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.error-title[data-v-5b349f6a] {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  animation: fadeIn-5b349f6a 0.8s ease-out;
+}
+.error-description[data-v-5b349f6a] {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  animation: fadeIn-5b349f6a 1s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+.back-home-btn[data-v-5b349f6a] {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 25px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: fadeIn-5b349f6a 1.2s ease-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+.back-home-btn[data-v-5b349f6a]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+@keyframes bounce-5b349f6a {
+from {
+    transform: translateY(0);
+}
+to {
+    transform: translateY(-10px);
+}
+}
+@keyframes fadeIn-5b349f6a {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+.error-code[data-v-5b349f6a] {
+    margin-bottom: 20px;
+}
+.digit[data-v-5b349f6a] {
+    font-size: 60px;
+    margin: 0 5px;
+}
+.error-title[data-v-5b349f6a] {
+    font-size: 24px;
+}
+.error-description[data-v-5b349f6a] {
+    font-size: 14px;
+}
+.not-found-content[data-v-5b349f6a] {
+    padding: 30px 20px;
+}
+}
+@media (max-width: 480px) {
+.digit[data-v-5b349f6a] {
+    font-size: 40px;
+}
+.error-title[data-v-5b349f6a] {
+    font-size: 20px;
+}
+.back-home-btn[data-v-5b349f6a] {
+    padding: 10px 20px;
+}
+}
