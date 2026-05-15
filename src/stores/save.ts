@@ -1,10 +1,10 @@
-import { ref, computed, toRaw, reactive } from 'vue'
-import { defineStore, type DefineStoreOptions } from 'pinia'
+
+import { defineStore } from 'pinia'
 
 interface SaveStoreState {
   hasUnsavedChanges: boolean
   saveLoading: boolean
-  fetchDatas: Object | null
+  fetchDatas: object | null
   fetchDataLoading: boolean
   blobDatas: Blob | null
 }

@@ -7,5 +7,9 @@
   "categories": {
     "correctness": "error"
   },
-  "ignorePatterns": ["dist/", "node_modules/"]
+  "ignorePatterns": ["dist/", "node_modules/"],
+  "rules": {
+    "unicorn/quote-style": "off",
+    "quotes": ["error", "single"]
+  }
 }
