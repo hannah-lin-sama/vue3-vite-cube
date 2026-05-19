@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "homepage": "https://hannah-lin-sama.github.io/vue3-vite-cube/",
   "scripts": {
     "start1": "vite --experimentalBundle",
     "start-runner": "vite --configLoader=runner",
@@ -15,8 +16,9 @@
     "lint": "run-s lint:*",
     "lint:oxlint": "oxlint src/ --fix",
     "lint:eslint": "eslint src/ --fix --cache",
-    "format": "oxfmt src/",
-    "test-vite": "node script/index.js"
+    "format": "oxfmt src/ ",
+    "test-vite": "node script/index.js",
+    "deploy": "gh-pages -d dist-cube"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.2",
@@ -42,6 +44,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-oxlint": "~1.50.0",
     "eslint-plugin-vue": "~10.8.0",
+    "gh-pages": "^6.3.0",
     "jiti": "^2.6.1",
     "jsdom": "^28.1.0",
     "less": "^4.6.4",

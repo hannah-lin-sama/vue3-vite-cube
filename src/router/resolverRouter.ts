@@ -1,7 +1,7 @@
-import { experimental_createRouter } from 'vue-router/experimental'
 import { createWebHistory } from 'vue-router'
 // 自动生成的路由（vite 插件注入）
 import { resolver } from 'vue-router/auto-resolver'
+import { experimental_createRouter } from 'vue-router/experimental'
 
 // console.log('routes', routes)
 const router = experimental_createRouter({
