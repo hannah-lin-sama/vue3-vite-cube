@@ -53,6 +53,7 @@ export default defineConfig({
     // vueDevTools(),
     ElementPlus({}),
   ],
+  base: '/vue3-vite-cube/',
   resolve: {
     // alias: {
     //   '@': fileURLToPath(new URL('./src', import.meta.url))
