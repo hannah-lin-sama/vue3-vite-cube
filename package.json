@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://hannah-lin-sama.github.io/vue3-vite-cube/",
+  "homepage": "https://hannah-lin-sama.github.io/vue3-vite-cube",
   "scripts": {
     "start1": "vite --experimentalBundle",
     "start-runner": "vite --configLoader=runner",
@@ -18,7 +18,7 @@
     "lint:eslint": "eslint src/ --fix --cache",
     "format": "oxfmt src/ ",
     "test-vite": "node script/index.js",
-    "deploy": "gh-pages -d dist-cube"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.2",

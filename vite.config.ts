@@ -73,7 +73,8 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'dist-cube',
+    // outDir: 'dist-cube',
+    outDir: 'dist',
     assetsDir: 'public',
     // minify: 'oxc', // oxc false terser esbuild
     minify: false, // 关闭压缩
@@ -88,13 +89,6 @@ export default defineConfig({
       },
     },
   },
-  // mode: 'development',
-  // server: {
-  //   ws: false,
-  // },
-  // optimizeDeps: {
-  //   include: ['virtual:vue-inspector-path:load.js'],
-  // },
   server: {
     
     port: 5173, // 端口号

@@ -1,1 +1,0 @@
-import{f as e,i as t,s as n,v as r}from"./runtime-core.esm-bundler-upKF5yPI.js";import{r as i}from"./index-dvaPMBny.js";var a=i(e({name:`HomeIndexView`,__name:`index`,setup(e){let i=()=>{console.log(`click`)};return(e,a)=>(r(),n(`div`,null,[t(`p`,{onClick:i},`Home Index`)]))}}),[[`__scopeId`,`data-v-c64cc070`]]);export{a as default};
