@@ -1,0 +1,54 @@
+.flex-center[data-v-6408e7a8] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between[data-v-6408e7a8] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@keyframes fadeIn-6408e7a8 {
+from {
+    opacity: 0;
+    transform: translateY(10px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+@keyframes slideIn-6408e7a8 {
+from {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+@keyframes spin-6408e7a8 {
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(360deg);
+}
+}
+@keyframes bounce-6408e7a8 {
+from {
+    transform: translateY(0);
+}
+to {
+    transform: translateY(-10px);
+}
+}
+.tab-item[data-v-6408e7a8] {
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
