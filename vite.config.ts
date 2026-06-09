@@ -1,11 +1,12 @@
-// import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, minify } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 // import vueDevTools from 'vite-plugin-vue-devtools'
 import VueRouter from 'vue-router/vite'
 import ElementPlus from 'unplugin-element-plus/vite'
-
+// import fs from 'fs'
+// import basicSsl from '@vitejs/plugin-basic-ssl'
+// import proxyHttp2 from 'vite-plugin-proxy-http2'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -50,8 +51,38 @@ export default defineConfig({
     vueJsx({
       
     }),
+    // mkcertPlugin(),
+    // http2Proxy({
+    //   quiet: true,
+    // }),
     // vueDevTools(),
     ElementPlus({}),
+    // basicSsl(),
+    // proxyHttp2({
+    //   proxy: {
+    //           '/api1': {
+    //     target: 'https://localhost:8443', // https
+    //     changeOrigin: true,
+    //     secure: false,
+    //     rewrite: (path) => {
+    //       console.log('rewrite',path.replace(/^\/api1/, '/api'))
+    //       return path.replace(/^\/api1/, '/api')
+    //     },
+    //   },
+    //     '/api2': {
+    //       target: 'https://localhost:8843/api', // http/2
+    //       changeOrigin: true,
+    //       secure: false,
+    //       rewrite: (path) => path.replace(/^\/api2/, '/api'),
+    //     },
+    //   },
+    // }),
+    // {
+    //   name: 'copy-404',
+    //   closeBundle() {
+    //     fs.copyFileSync('dist/index.html', 'dist/404.html')
+    //   }
+    // }
   ],
   base: '/vue3-vite-cube/',
   resolve: {
@@ -90,29 +121,35 @@ export default defineConfig({
     },
   },
   server: {
-    
     port: 5173, // 端口号
     host: '0.0.0.0', // 监听所有网络接口
-    allowedHosts: ['localhost'], // 允许的主机名
+    // allowedHosts: ['localhost'], // 允许的主机名
     open: true, // 自动打开浏览器
     strictPort: true, // 严格端口号
+    // https: {
+    //   key: fs.readFileSync('./ssl/private-key.pem'),
+    //   cert: fs.readFileSync('./ssl/certificate.pem'),
+    // }, // 开启 https
     proxy: {
       // 简单字符串
-      '/api1': 'http://localhost:3000',
+      // '/api1': 'http://localhost:3000',
       // 对象配置
-      '/api': {
-        target: 'http://localhost:3001',
+      '/api1': {
+        target: 'https://localhost:8443', // https
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => {
+          console.log('rewrite',path.replace(/^\/api1/, '/api'))
+          return path.replace(/^\/api1/, '/api')
+        },
       },
       // 正则配置
-      '/api2': {
-        target: 'http://localhost:3002',
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api2/, ''),
-      },
+      // '/api2': {
+      //   target: 'https://localhost:8843', // http/2
+      //   changeOrigin: true,
+      //   secure: false,
+      //   rewrite: (path) => path.replace(/^\/api2/, '/api/'),
+      // },
     },
     // cors: true, // 开启 CORS
     // hmr: true,
