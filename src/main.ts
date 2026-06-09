@@ -1,5 +1,4 @@
 import './assets/main.css'
-// import router from './router/resolverRouter'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
