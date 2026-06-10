@@ -1,0 +1,1 @@
+import{H as e,R as t,f as n,x as r}from"./runtime-core.esm-bundler-PrkWF7KG.js";var i=r({name:`CloudUserView`,__name:`user`,setup(r){return(r,i)=>{let a=e(`router-view`);return t(),n(a)}}});export{i as default};

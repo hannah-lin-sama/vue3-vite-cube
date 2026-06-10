@@ -1,0 +1,1 @@
+import{H as e,R as t,b as n,d as r,m as i,x as a}from"./runtime-core.esm-bundler-PrkWF7KG.js";var o={class:`cloud-index`},s=a({name:`CloudIndexView`,__name:`index`,setup(a){return(a,s)=>{let c=e(`CacheA`);return t(),i(`div`,o,[s[0]||=r(`p`,{class:`title`},`这里是云平台首页新`,-1),n(c)])}}});export{s as default};

@@ -2,7 +2,11 @@
   <div class="login-container">
     <!-- 左侧图片区域 -->
     <div class="login-image-section">
-      <img class="login-image" src="https://picsum.photos/seed/mountain/1200/800" alt="登录背景" />
+      <img
+        class="login-image"
+        src="https://picsum.photos/seed/mountain/1200/800"
+        alt="登录背景"
+      />
       <div class="image-overlay">
         <div class="overlay-content">
           <h2>Vue Cube</h2>
@@ -22,7 +26,7 @@
         <form class="login-form">
           <!-- 用户名输入 -->
           <div class="form-group">
-            <label for="username" class="form-label">用户名</label>
+            <label for="username" class="form-label">用户名称</label>
             <div class="input-wrapper">
               <span class="input-icon">👤</span>
               <input
@@ -30,9 +34,8 @@
                 id="username"
                 class="form-input"
                 placeholder="请输入用户名"
+                autocomplete="off"
                 v-model="form.username"
-                @focus="focusInput('username')"
-                @blur="blurInput('username')"
               />
             </div>
             <p v-if="errors.username" class="error-message">{{ errors.username }}</p>
@@ -49,11 +52,14 @@
                 class="form-input"
                 placeholder="请输入密码"
                 v-model="form.password"
-                @focus="focusInput('password')"
-                @blur="blurInput('password')"
+                autocomplete="off"
               />
-              <button type="button" class="toggle-password" @click="showPassword = !showPassword">
-                {{ showPassword ? '👁️' : '👁️‍🗨️' }}
+              <button
+                type="button"
+                class="toggle-password"
+                @click="showPassword = !showPassword"
+              >
+                {{ showPassword ? "👁️" : "👁️‍🗨️" }}
               </button>
             </div>
             <p v-if="errors.password" class="error-message">{{ errors.password }}</p>
@@ -69,7 +75,12 @@
           </div>
 
           <!-- 登录按钮 -->
-          <button type="button" class="login-button" @click="handleLogin" :disabled="isLoading">
+          <button
+            type="button"
+            class="login-button"
+            @click="handleLogin"
+            :disabled="isLoading"
+          >
             <span v-if="!isLoading">登录</span>
             <span v-else class="loading-spinner">⟳</span>
           </button>
@@ -97,77 +108,78 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, reactive } from "vue";
+import { useRouter } from "vue-router";
+import service from "@/service";
+import { da } from "element-plus/es/locale/index.mjs";
 
-const router = useRouter()
+const router = useRouter();
 
 // 表单数据
 const form = reactive({
-  username: '',
-  password: '',
-  remember: false
-})
+  username: "",
+  password: "",
+  remember: false,
+});
 
 // 错误信息
 const errors = reactive({
-  username: '',
-  password: ''
-})
+  username: "",
+  password: "",
+});
 
 // 状态
-const showPassword = ref(false)
-const isLoading = ref(false)
-const focusedInput = ref('')
-
-// 输入框聚焦
-const focusInput = (input: string) => {
-  focusedInput.value = input
-  errors[input as keyof typeof errors] = ''
-}
-
-// 输入框失焦
-const blurInput = (input: string) => {
-  focusedInput.value = ''
-}
+const showPassword = ref(false);
+const isLoading = ref(false);
 
 // 登录处理
 const handleLogin = async () => {
   // 表单验证
-  let isValid = true
+  let isValid = true;
 
   if (!form.username) {
-    errors.username = '请输入用户名'
-    isValid = false
+    errors.username = "请输入用户名";
+    isValid = false;
   }
 
   if (!form.password) {
-    errors.password = '请输入密码'
-    isValid = false
+    errors.password = "请输入密码";
+    isValid = false;
   }
 
-  if (!isValid) return
+  if (!isValid) return;
 
   // 模拟登录请求
-  isLoading.value = true
+  isLoading.value = true;
 
-  try {
-    // 这里可以替换为实际的登录API调用
-    await new Promise(resolve => setTimeout(resolve, 1500))
-
-    // 登录成功后跳转到首页
-    router.push('/home')
-  } catch (error) {
-    console.error('登录失败:', error)
-    // 这里可以添加错误处理逻辑
-  } finally {
-    isLoading.value = false
-  }
-}
+  service({
+    url: "/api1/login",
+    method: "POST",
+    data: {
+      name: form.username,
+      password: form.password,
+    },
+  })
+    .then(({ data }) => {
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("refreshToken", data.refreshToken);
+      if (data.accessToken && data.refreshToken) {
+        // 登录成功后跳转到首页
+        router.push("/home");
+      }
+    })
+    .catch((error) => {
+      console.error("登录失败:", error);
+      // 这里可以添加错误处理逻辑
+    })
+    .finally(() => {
+      isLoading.value = false;
+    });
+};
 
 defineOptions({
-  name: 'LoginView'
-})
+  name: "LoginView",
+});
 </script>
 
 <style scoped lang="less">
@@ -197,7 +209,11 @@ defineOptions({
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+    background: linear-gradient(
+      135deg,
+      rgba(102, 126, 234, 0.8) 0%,
+      rgba(118, 75, 162, 0.8) 100%
+    );
     .flex-center;
     flex-direction: column;
     color: @white;
@@ -335,7 +351,7 @@ defineOptions({
         gap: 8px;
         color: @text-secondary;
 
-        input[type='checkbox'] {
+        input[type="checkbox"] {
           width: 16px;
           height: 16px;
           cursor: pointer;
@@ -395,7 +411,7 @@ defineOptions({
 
         &::before,
         &::after {
-          content: '';
+          content: "";
           flex: 1;
           height: 1px;
           background-color: @border-color;
@@ -513,7 +529,7 @@ defineOptions({
 </style>
 
 <route lang="yaml">
-name: 'login'
+name: "login"
 meta:
-  title: 'Login'
+  title: "Login"
 </route>

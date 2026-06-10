@@ -104,21 +104,20 @@ export default defineConfig({
     }
   },
   build: {
-    // outDir: 'dist-cube',
     outDir: 'dist',
     assetsDir: 'public',
-    // minify: 'oxc', // oxc false terser esbuild
-    minify: false, // 关闭压缩
-    // minify: true, // 开启压缩
-    manifest: true, // 生成 manifest.json 文件
+    minify: true, // 开启压缩
+    manifest: true, // 生成 manifest.json 文件、
+    cssCodeSplit: true, // 开启 css 代码分割
+    cssMinify: true, // 开启 css 压缩
     license: true, // 生成 license.md 文件
     sourcemap: true, // 生成 sourcemap 文件
-    rolldownOptions: {
-      output: {
-        postBanner:
-          '/* See licenses of bundled dependencies at https://example.com/license.md */',
-      },
-    },
+    // rolldownOptions: {
+    //   output: {
+    //     postBanner:
+    //       '/* See licenses of bundled dependencies at https://example.com/license.md */',
+    //   },
+    // },
   },
   server: {
     port: 5173, // 端口号
@@ -135,12 +134,12 @@ export default defineConfig({
       // '/api1': 'http://localhost:3000',
       // 对象配置
       '/api1': {
-        target: 'https://localhost:8443', // https
+        target: 'https://localhost:3000/api', // https
         changeOrigin: true,
         secure: false,
         rewrite: (path) => {
-          console.log('rewrite',path.replace(/^\/api1/, '/api'))
-          return path.replace(/^\/api1/, '/api')
+          console.log('rewrite',path.replace(/^\/api1/, ''))
+          return path.replace(/^\/api1/, '')
         },
       },
       // 正则配置
