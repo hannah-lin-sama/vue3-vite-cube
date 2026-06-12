@@ -1,52 +1,29 @@
 <template>
-  <div class="cloud-index">
-    <p class="title">这里是云平台首页新</p>
-    <!-- <p class="title">这里是云平台首页新</p> -->
-    <!-- <EffectA /> -->
-    <!-- <EffectB /> -->
-    <!-- <ComputeA /> -->
-    <!-- <RefDom ref="comRef" /> -->
-    <!-- <ReactiveA /> -->
-    <!-- <RefA /> -->
-    <!-- <StyleA>
-      <template #default>
-        <p>这里是StyleA 插槽</p>
-      </template>
-    </StyleA> -->
-
-    <!-- <InputCom /> -->
-    <!-- <ComputedA /> -->
-    <!-- <tabOne /> -->
-    <!-- <BatchA /> -->
-    <!-- <ShowA /> -->
-    <CacheA />
+  <div>
+    <h1>Fetch https</h1>
+    <el-button @click="fetchData"> CORS Fetch</el-button>
+    <el-button @click="fetchData2">Fetch Data2</el-button>
   </div>
 </template>
 <script setup lang="ts">
-// import StyleA from "@/pages/cloud/components/StyleA.vue";
-// import ComputeA from "@/pages/cloud/components/ComputeA.vue";
-// import RefDom from "@/pages/cloud/components/RefDom.vue";
-// import ReactiveA from "@/pages/cloud/components/ReactiveA.vue";
-// import RefA from '@/pages/cloud/components/RefA.vue'
-// import EffectA from "@/pages/cloud/components/EffectA.vue";
-// import EffectB from "@/pages/cloud/components/EffectB.vue";
-// import InputCom from '@/pages/cloud/components/InputCom.vue'
-// import ComputedA from '@/pages/cloud/components/ComputedA.vue'
-// import tabOne from "@/pages/cloud/components/tabOne.vue";
+import { ElButton } from "element-plus";
+const fetchData = async () => {
+  // 先发起一个请求建立 HTTP/3 连接
+  const response = await fetch("https://localhost:8443", {});
+  console.log("response", response);
 
-// import BatchA from "@/pages/cloud/components/BatchA.vue";
-// import ShowA from '@/pages/cloud/components/ShowA.vue'
+  // 等待一小段时间让 Alt-Svc 生效
+  await new Promise((r) => setTimeout(r, 100));
 
-// import CacheA from '@/pages/cloud/components/CacheA.vue'
+  const response1 = await fetch("https://localhost:8443/api/user");
+  console.log("response1", response1);
+};
 
-// import { onMounted, ref, type ComponentPublicInstance } from 'vue'
-
-// const comRef = ref<ComponentPublicInstance | null>(null)
-
-// onMounted(() => {
-//   console.log('component ref', comRef.value?.$refs.pDom)
-// })
+const fetchData2 = async () => {
+  const response = await fetch("/api3/user");
+  console.log("response2", response);
+};
 defineOptions({
-  name: 'CloudIndexView'
-})
+  name: "FetchCComponent",
+});
 </script>

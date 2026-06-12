@@ -8,15 +8,15 @@
 <script setup lang="ts">
 import { ElButton } from "element-plus";
 const fetchData = async () => {
-  const response1 = await fetch("https://localhost:8443/api/user");
-  console.log("response1", response1);
+  const response = await fetch("https://localhost:8443/api/user");
+  console.log("response", response);
 };
 
 const fetchData2 = async () => {
-  const response = await fetch("/api3/user");
+  const response = await fetch("/api1/user");
   console.log("response2", response);
 };
 defineOptions({
-  name: "IndexLogsView",
+  name: "FetchCComponent",
 });
 </script>

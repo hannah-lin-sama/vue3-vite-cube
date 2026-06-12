@@ -330,6 +330,30 @@
   resolved "https://registry.npmjs.org/@ctrl/tinycolor/-/tinycolor-4.2.0.tgz"
   integrity sha512-kzyuwOAQnXJNLS9PSyrk0CWk35nWJW/zl/6KvnTBMFK65gm7U1/Z5BqjxeapjZCIhQcM/DsrEmcbRwDyXyXK4A==
 
+"@currentspace/http3-darwin-arm64@0.8.5":
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@currentspace/http3-darwin-arm64/-/http3-darwin-arm64-0.8.5.tgz#4681ac36473d0a13cc333805d2accb1e804101cb"
+  integrity sha512-8ocdwlTfqZp0awQUlv5kB9C3Q7C1iZagtNpv+TzQpQph1ZWu1K5iS209IjR2EIAGs6V1WIczjc8slZCUB97RuQ==
+
+"@currentspace/http3-linux-arm64-gnu@0.8.5":
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@currentspace/http3-linux-arm64-gnu/-/http3-linux-arm64-gnu-0.8.5.tgz#fe25ae841dae903fd7086f752e37fa6d89708b31"
+  integrity sha512-cNbSWE2EwY/yfpnj7qtgXpIC9AkFh28ACc7xygnKE0ayIvRweoLsP+GMtgwGVUWAxDB1vf6X8PMXxZYKmWqI0A==
+
+"@currentspace/http3-linux-x64-gnu@0.8.5":
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@currentspace/http3-linux-x64-gnu/-/http3-linux-x64-gnu-0.8.5.tgz#784f9b7a34f5d4d1a562140cc2d2f9ba2190caa5"
+  integrity sha512-pENtrt3EVG3O5ktGci2hoNJmIIOokuUVDYzhs/6teMcNFSUqWTHIm7VGfJajj67iUgRzWeRYjVv3/Y0lcinNqA==
+
+"@currentspace/http3@^0.8.5":
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@currentspace/http3/-/http3-0.8.5.tgz#5300d9576441e096ae6c48c90ecf0e8484d350f7"
+  integrity sha512-Quxr3ul3raPslOi0xS3NGMx/TkjDiChafqJ1Td3qeyQXT5tqLpFSQDqA54Ewg0YemEMB5JInFWc9dsVCKW16dw==
+  optionalDependencies:
+    "@currentspace/http3-darwin-arm64" "0.8.5"
+    "@currentspace/http3-linux-arm64-gnu" "0.8.5"
+    "@currentspace/http3-linux-x64-gnu" "0.8.5"
+
 "@element-plus/icons-vue@^2.3.2":
   version "2.3.2"
   resolved "https://registry.npmjs.org/@element-plus/icons-vue/-/icons-vue-2.3.2.tgz"
