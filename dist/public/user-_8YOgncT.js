@@ -1,0 +1,2 @@
+import{H as e,R as t,f as n,x as r}from"./runtime-core.esm-bundler-DR0FSCiC.js";import{t as i}from"./route-block-BX_aEI7e.js";var a=r({name:`UserIndexView`,__name:`user`,setup(r){return(r,i)=>{let a=e(`RouterView`);return t(),n(a)}}});typeof i==`function`&&i(a);var o=a;export{o as default};
+//# sourceMappingURL=user-_8YOgncT.js.map

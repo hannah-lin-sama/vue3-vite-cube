@@ -1,0 +1,2 @@
+import{b as e,x as t,y as n}from"./runtime-core.esm-bundler-DR0FSCiC.js";var r=t({name:`CloudUserIndexView`,setup(t,r){return()=>e(`div`,null,[e(`button`,null,[n(`按钮`)]),e(`p`,null,[n(`用户管理`)])])}});export{r as default};
+//# sourceMappingURL=user-CLGz7xH1.js.map

@@ -1,0 +1,2 @@
+import{H as e,R as t,f as n,x as r}from"./runtime-core.esm-bundler-DR0FSCiC.js";import{t as i}from"./route-block-BX_aEI7e.js";var a=r({name:`TaskIndexView`,__name:`index`,setup(r){return(r,i)=>{let a=e(`router-view`);return t(),n(a)}}});typeof i==`function`&&i(a);var o=a;export{o as default};
+//# sourceMappingURL=task-D3MbVeE6.js.map

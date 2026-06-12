@@ -1,0 +1,2 @@
+import{H as e,R as t,b as n,m as r,x as i}from"./runtime-core.esm-bundler-DR0FSCiC.js";var a=i({name:`HomeDashboardView`,__name:`dashboard`,setup(i){return(i,a)=>{let o=e(`router-view`);return t(),r(`div`,null,[n(o),n(o,{name:`logs`})])}}});export{a as default};
+//# sourceMappingURL=dashboard-CVsHLXvh.js.map

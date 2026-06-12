@@ -1,0 +1,2 @@
+import{R as e,m as t,x as n}from"./runtime-core.esm-bundler-DR0FSCiC.js";var r=n({name:`CloudRoleIndexView`,__name:`index`,setup(n){return(n,r)=>(e(),t(`div`))}});export{r as default};
+//# sourceMappingURL=role-C9SJ_iGw.js.map

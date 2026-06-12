@@ -1,0 +1,2 @@
+import{H as e,R as t,f as n,x as r}from"./runtime-core.esm-bundler-DR0FSCiC.js";var i=r({name:`CloudUserView`,__name:`user`,setup(r){return(r,i)=>{let a=e(`router-view`);return t(),n(a)}}});export{i as default};
+//# sourceMappingURL=user-jrOHa7we.js.map

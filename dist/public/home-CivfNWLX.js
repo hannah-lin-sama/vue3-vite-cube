@@ -1,0 +1,2 @@
+import{R as e,d as t,m as n,x as r,y as i}from"./runtime-core.esm-bundler-DR0FSCiC.js";import{i as a}from"./index-CHsDdILU.js";var o=a(r({name:`HomeIndexView`,__name:`index`,setup(r){let a=()=>{console.log(`click`)};return(r,o)=>(e(),n(`div`,null,[o[0]||=t(`p`,null,`Home Index`,-1),t(`p`,{onClick:a},`Home Index`),o[1]||=t(`p`,null,`Home Index`,-1),o[2]||=i(` 平层层 `,-1)]))}}),[[`__scopeId`,`data-v-379d8551`]]);export{o as default};
+//# sourceMappingURL=home-CivfNWLX.js.map

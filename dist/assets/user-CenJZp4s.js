@@ -1,1 +1,0 @@
-import{H as e,R as t,f as n,x as r}from"./runtime-core.esm-bundler-PrkWF7KG.js";import{t as i}from"./route-block-Bv4LUSJg.js";var a=r({name:`UserIndexView`,__name:`user`,setup(r){return(r,i)=>{let a=e(`RouterView`);return t(),n(a)}}});typeof i==`function`&&i(a);var o=a;export{o as default};

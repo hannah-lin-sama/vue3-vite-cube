@@ -1,0 +1,2 @@
+import{R as e,m as t,x as n}from"./runtime-core.esm-bundler-DR0FSCiC.js";var r=n({name:`HomeDashboardIndexView`,__name:`index`,setup(n){return(n,r)=>(e(),t(`div`))}});export{r as default};
+//# sourceMappingURL=dashboard-B5Vb2lj7.js.map
