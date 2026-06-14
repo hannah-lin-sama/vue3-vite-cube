@@ -4,9 +4,9 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 // import vueDevTools from 'vite-plugin-vue-devtools'
 import VueRouter from 'vue-router/vite'
 import ElementPlus from 'unplugin-element-plus/vite'
-import fs from 'fs'
+// import fs from 'fs'
 // import basicSsl from '@vitejs/plugin-basic-ssl'
-import proxyHttp2 from 'vite-plugin-proxy-http2'
+// import proxyHttp2 from 'vite-plugin-proxy-http2'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -58,31 +58,31 @@ export default defineConfig({
     // vueDevTools(),
     ElementPlus({}),
     // basicSsl(),
-    proxyHttp2({
-      proxy: {
-        // '/api1': {
-        //   target: 'https://localhost:8443', // https
-        //   changeOrigin: true,
-        //   secure: false,
-        //   rewrite: (path) => {
-        //     console.log('rewrite',path.replace(/^\/api1/, '/api'))
-        //     return path.replace(/^\/api1/, '/api')
-        //   },
-        // },
-        // '/api2': {
-        //   target: 'https://localhost:8843/api', // http/2
-        //   changeOrigin: true,
-        //   secure: false,
-        //   rewrite: (path) => path.replace(/^\/api2/, '/api'),
-        // },
-        '/api3': {
-          target: 'https://localhost:8443', // http/3
-          changeOrigin: true,
-          secure: false,
-          rewrite: (path) => path.replace(/^\/api3/, '/api'),
-        },
-      },
-    }),
+    // proxyHttp2({
+    //   proxy: {
+    //     // '/api1': {
+    //     //   target: 'https://localhost:8443', // https
+    //     //   changeOrigin: true,
+    //     //   secure: false,
+    //     //   rewrite: (path) => {
+    //     //     console.log('rewrite',path.replace(/^\/api1/, '/api'))
+    //     //     return path.replace(/^\/api1/, '/api')
+    //     //   },
+    //     // },
+    //     // '/api2': {
+    //     //   target: 'https://localhost:8843/api', // http/2
+    //     //   changeOrigin: true,
+    //     //   secure: false,
+    //     //   rewrite: (path) => path.replace(/^\/api2/, '/api'),
+    //     // },
+    //     '/api3': {
+    //       target: 'https://localhost:8443', // http/3
+    //       changeOrigin: true,
+    //       secure: false,
+    //       rewrite: (path) => path.replace(/^\/api3/, '/api'),
+    //     },
+    //   },
+    // }),
     // {
     //   name: 'copy-404',
     //   closeBundle() {
@@ -128,45 +128,49 @@ export default defineConfig({
   server: {
     port: 5173, // 端口号
     host: '0.0.0.0', // 监听所有网络接口
-    allowedHosts: ['sama.local'], // 允许的主机名 192.168.1.3
+    // allowedHosts: ['sama.local'], // 允许的主机名 192.168.1.3
     open: true, // 自动打开浏览器
     strictPort: true, // 严格端口号
-    https: {
-      key: fs.readFileSync('./ssl/private-key.pem'),
-      cert: fs.readFileSync('./ssl/certificate.pem'),
-    }, // 开启 https
-    // proxy: {
-    //   // 简单字符串
-    //   // '/api1': 'http://localhost:3000',
-    //   // 对象配置
-    //   '/api1': {
-    //     target: 'https://localhost:3000/api', // https
-    //     changeOrigin: true,
-    //     secure: false,
-    //     rewrite: (path) => {
-    //       console.log('rewrite',path.replace(/^\/api1/, ''))
-    //       return path.replace(/^\/api1/, '')
-    //     },
-    //   },
-    //   // 正则配置
-    //   // '/api2': {
-    //   //   target: 'https://localhost:8843', // http/2
-    //   //   changeOrigin: true,
-    //   //   secure: false,
-    //   //   rewrite: (path) => path.replace(/^\/api2/, '/api/'),
-    //   // },
-    //   // 正则配置
-    //   // '/api3': {
-    //   //   target: 'https://localhost:8443', // http/3
-    //   //   changeOrigin: true,
-    //   //   secure: false,
-    //   //   rewrite: (path) => {
-
-    //   //     console.log('rewrite',path.replace(/^\/api3/, '/api'))
-    //   //     return path.replace(/^\/api3/, '/api')
-    //   //   },
-    //   // },
+    // https:{
+    //   key: fs.readFileSync('./ssl-local/localhost+2-key.pem'),
+    //   cert: fs.readFileSync('./ssl-local/localhost+2.pem'),
     // },
+    // https: {
+    //   key: fs.readFileSync('./ssl/private-key.pem'),
+    //   cert: fs.readFileSync('./ssl/certificate.pem'),
+    // }, // 开启 https
+    proxy: {
+      // 简单字符串
+      // '/api1': 'http://localhost:3000',
+      // 对象配置
+      '/api1': {
+        target: 'http://localhost:3000', // https
+        changeOrigin: true,
+        // secure: false,
+        rewrite: (path) => {
+          console.log('rewrite',path.replace(/^\/api1/, '/api'))
+          return path.replace(/^\/api1/, '/api')
+        },
+      },
+      // 正则配置
+      // '/api2': {
+      //   target: 'https://localhost:8843', // http/2
+      //   changeOrigin: true,
+      //   secure: false,
+      //   rewrite: (path) => path.replace(/^\/api2/, '/api/'),
+      // },
+      // 正则配置
+      // '/api3': {
+      //   target: 'https://localhost:8443', // http/3
+      //   changeOrigin: true,
+      //   secure: false,
+      //   rewrite: (path) => {
+
+      //     console.log('rewrite',path.replace(/^\/api3/, '/api'))
+      //     return path.replace(/^\/api3/, '/api')
+      //   },
+      // },
+    },
   },
   experimental: {
     // bundledDev: true,

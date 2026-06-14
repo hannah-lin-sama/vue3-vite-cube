@@ -3,13 +3,16 @@
     <h1>Fetch https</h1>
     <el-button @click="fetchData"> CORS Fetch</el-button>
     <el-button @click="fetchData2">Fetch Data2</el-button>
+
+    <!-- <iframe src="https://localhost:8443/api/iframe" frameborder="0"></iframe> -->
+    <iframe src="/api3/iframe" frameborder="0"></iframe>
   </div>
 </template>
 <script setup lang="ts">
 import { ElButton } from "element-plus";
 const fetchData = async () => {
   // 先发起一个请求建立 HTTP/3 连接
-  const response = await fetch("https://localhost:8443", {});
+  const response = await fetch("https://localhost:8443/api/user", {});
   console.log("response", response);
 
   // 等待一小段时间让 Alt-Svc 生效
